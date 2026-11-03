@@ -11,7 +11,7 @@
 - ต่อย 4 = ท่าซัดศัตรูขึ้นฟ้า ต่อย 5–6 = คอมโบต่อจากท่า 4
 - ท่ายืนของทุกสไตล์ใช้อนิเมชั่นของ WOM
 - ดาเมจ 4.00–8.00 ความเร็ว 1.50–2.50 มีทั้งชุดแรงช้าและชุดเร็วเบา
-- ปนท่าเตะได้ (ผู้ใช้ยืนยันแล้ว)
+- ปนท่าเตะได้ รวมท่าของ EpicSanji (ผู้ใช้ยืนยันแล้วว่าเกมของตนรัน EpicSanji ร่วมกับ WOM ได้)
 - ส่งมอบเป็น .jar ผ่าน GitHub Actions ของรีโปนี้ (ผู้ใช้เล่นบนมือถือ)
 
 ## 3. ผลสำรวจม็อดที่ส่งมา
@@ -20,7 +20,7 @@
 | Weapons of Miracles 2.0.171 (WOM) | Epic Fight API รุ่นใหม่ (`AnimationAccessor`) ต้องการ Epic Fight ≥ 20.14.3 | ใช้: ท่าต่อย/เตะ และท่ายืน/เดิน/วิ่ง |
 | ef_cz 0.3.9.10 | API รุ่นใหม่ | ใช้: ท่าของ kabal, ironclad, shogun |
 | effs 1.1.0 | มีสไตล์ "Hand Combat" แบบ JSON | ใช้เป็นแม่แบบโครงสร้างเท่านั้น |
-| EpicSanji 20.1.6.1 | build ก.พ. 2024 ใช้ API รุ่นเก่า (`api.forgeevent.AnimationRegistryEvent`) | **ไม่ใช้** ดูข้อ 9 |
+| EpicSanji 20.1.6.1 | build ก.พ. 2024 ใช้ API รุ่นเก่า (`api.forgeevent.AnimationRegistryEvent`) แต่ผู้ใช้ยืนยันว่าเกมของตนรันร่วมกับ WOM ได้ | ใช้: ท่าเตะ `sanji_auto_1–4` |
 
 ## 4. แนวทาง
 ข้อมูลเป็น JSON แบบ data-driven ของ Epic Fight (โครงสร้างเดียวกับ `effs:hand_combat`) มี Java เฉพาะส่วนที่ JSON ทำไม่ได้ คือลงทะเบียนไอเท็ม แท็บ Creative ค่าดาเมจ/ความเร็ว และ hook ซัดศัตรูขึ้นฟ้า ไม่ลงทะเบียนอนิเมชั่นใหม่ จึงไม่ต้องคอมไพล์ผูกกับโค้ด Epic Fight
@@ -62,7 +62,7 @@ mod id: `fiststyle` ไอเท็ม `fiststyle:style_1` … `style_10`
 
 `max_strikes` = 1 ทุกสไตล์ `armor_negation` = 0 ค่าเหล่านี้ผู้ใช้ไม่ได้ระบุ ตั้งไว้เป็นค่าเริ่มต้นเพื่อให้แก้ง่าย
 
-ท่าแต่ละสไตล์ (W = WOM, C = ef_cz, ตรวจแล้วว่าชื่อทุกท่ามีลงทะเบียนจริงในม็อดนั้น) ท่า 7–8 เป็นช่อง "วิ่งแล้วต่อย" และ "กระโดดแล้วต่อย" ตามที่ Epic Fight กำหนดให้สองท่าท้ายสุดของรายการคอมโบ
+ท่าแต่ละสไตล์ (W = WOM, C = ef_cz, K = EpicSanji ตรวจแล้วว่าชื่อทุกท่ามีลงทะเบียนจริงในม็อดนั้น) ท่า 7–8 เป็นช่อง "วิ่งแล้วต่อย" และ "กระโดดแล้วต่อย" ตามที่ Epic Fight กำหนดให้สองท่าท้ายสุดของรายการคอมโบ
 
 ### Style 1 — ดาเมจ 4.00 / ความเร็ว 2.50 — ท่ายืน WOM `enderblaster_onehand`
 1. ต่อย 1: `W:enderblaster_onehand_auto_1`
@@ -90,7 +90,7 @@ mod id: `fiststyle` ไอเท็ม `fiststyle:style_1` … `style_10`
 3. ต่อย 3: `W:enderblaster_onehand_auto_3`
 4. ต่อย 4 ⬆ ซัดขึ้นฟ้า: `W:kick_1`
 5. ต่อย 5: `C:kabal_auto3`
-6. ต่อย 6: `W:kick`
+6. ต่อย 6: `K:sanji_auto_1`
 7. วิ่งแล้วต่อย: `C:kabal_dash2`
 8. กระโดดแล้วต่อย: `W:enderblaster_onehand_jumpkick`
 
@@ -100,7 +100,7 @@ mod id: `fiststyle` ไอเท็ม `fiststyle:style_1` … `style_10`
 3. ต่อย 3: `W:enderblaster_twohand_auto_2`
 4. ต่อย 4 ⬆ ซัดขึ้นฟ้า: `W:agony_clawstrike`
 5. ต่อย 5: `W:enderblaster_twohand_auto_4`
-6. ต่อย 6: `C:kabal_auto3`
+6. ต่อย 6: `K:sanji_auto_2`
 7. วิ่งแล้วต่อย: `C:ironclad_dash`
 8. กระโดดแล้วต่อย: `W:agony_airslash`
 
@@ -110,7 +110,7 @@ mod id: `fiststyle` ไอเท็ม `fiststyle:style_1` … `style_10`
 3. ต่อย 3: `C:ironclad_auto2`
 4. ต่อย 4 ⬆ ซัดขึ้นฟ้า: `C:ironclad_fist_charge`
 5. ต่อย 5: `C:shogun_auto2`
-6. ต่อย 6: `W:kick_2`
+6. ต่อย 6: `K:sanji_auto_3`
 7. วิ่งแล้วต่อย: `C:shogun_dash1`
 8. กระโดดแล้วต่อย: `C:ironclad_airslash`
 
@@ -118,7 +118,7 @@ mod id: `fiststyle` ไอเท็ม `fiststyle:style_1` … `style_10`
 1. ต่อย 1: `C:shogun_auto1`
 2. ต่อย 2: `C:shogun_auto2`
 3. ต่อย 3: `W:antitheus_ascended_auto_1`
-4. ต่อย 4 ⬆ ซัดขึ้นฟ้า: `W:kick`
+4. ต่อย 4 ⬆ ซัดขึ้นฟ้า: `K:sanji_auto_4`
 5. ต่อย 5: `W:antitheus_ascended_auto_2`
 6. ต่อย 6: `W:antitheus_ascended_auto_3`
 7. วิ่งแล้วต่อย: `C:shogun_dash2`
@@ -126,7 +126,7 @@ mod id: `fiststyle` ไอเท็ม `fiststyle:style_1` … `style_10`
 
 ### Style 7 — ดาเมจ 6.50 / ความเร็ว 1.80 — ท่ายืน WOM `orbit`
 1. ต่อย 1: `W:antitheus_ascended_auto_1`
-2. ต่อย 2: `W:antitheus_auto_1`
+2. ต่อย 2: `K:sanji_auto_2`
 3. ต่อย 3: `W:antitheus_ascended_auto_2`
 4. ต่อย 4 ⬆ ซัดขึ้นฟ้า: `W:strong_punch`
 5. ต่อย 5: `W:antitheus_auto_3`
@@ -140,7 +140,7 @@ mod id: `fiststyle` ไอเท็ม `fiststyle:style_1` … `style_10`
 3. ต่อย 3: `W:antitheus_auto_3`
 4. ต่อย 4 ⬆ ซัดขึ้นฟ้า: `W:antitheus_guillotine`
 5. ต่อย 5: `W:antitheus_auto_4`
-6. ต่อย 6: `W:torment_berserk_auto_1`
+6. ต่อย 6: `K:sanji_auto_4`
 7. วิ่งแล้วต่อย: `W:torment_dash`
 8. กระโดดแล้วต่อย: `W:agony_air_attack_3`
 
@@ -175,12 +175,12 @@ mod id: `fiststyle` ไอเท็ม `fiststyle:style_1` … `style_10`
 - ฉันทดสอบ hook นี้เองไม่ได้ ต้องให้ผู้ใช้ลองในเกม
 
 ## 9. ข้อจำกัดและความเสี่ยง
-1. **EpicSanji ใช้ไม่ได้ร่วมกับ WOM/ef_cz ในรุ่นที่ส่งมา** build เมื่อ ก.พ. 2024 ลงทะเบียนอนิเมชั่นด้วย API ที่ WOM/ef_cz (ซึ่งต้องการ Epic Fight ≥ 20.14.3) ไม่ใช้แล้ว ดังนั้นสไตล์ทั้งหมดจึงไม่ใช้ท่าของ Sanji ท่าเตะมาจาก WOM แทน (`kick`, `kick_1–3`, `jumpkick`) ถ้าผู้ใช้รัน EpicSanji ได้จริงในแพ็กเดียวกัน แจ้งได้ ฉันจะเพิ่มชุดท่า Sanji
+1. **EpicSanji ใช้ API รุ่นเก่า** (build ก.พ. 2024) ฉันเห็นจากโค้ดว่าอาจเข้ากับ WOM/ef_cz ไม่ได้ แต่ผู้ใช้ยืนยันว่าเกมของตนรันร่วมกันได้ จึงใช้ท่า `sanji_auto_1–4` ใน Style 3–8 (ใช้เฉพาะท่าเตะพื้นฐาน ไม่ใช้ท่า Diable Jambe ที่ผูกกับสกิล) ถ้าท่า Sanji ไม่ทำงานในเกม ให้แจ้งเลขสไตล์ ฉันจะสลับเป็นท่า WOM
 2. **ฉันคอมไพล์และรันเกมที่นี่ไม่ได้** (เซิร์ฟเวอร์เข้า Forge maven ไม่ได้) การยืนยันทำได้เท่านี้: GitHub Actions build ผ่าน, ไฟล์ JSON ถูกต้อง, ชื่อท่าทุกท่าตรงกับ jar ที่ส่งมา ส่วนการทำงานในเกมผู้ใช้ต้องทดสอบ
 3. สคีมา JSON อ้างอิง `effs` ซึ่งเป็นตัวอย่างที่ใช้ได้จริงกับ Epic Fight รุ่นเดียวกับ WOM ถ้าเกมแจ้ง error ตอนโหลดข้อมูล ให้ส่งบรรทัด error มา
-4. ม็อดนี้ประกาศพึ่งพา `epicfight` (≥ 20.14.3), `wom`, `ef_cz` ถ้าขาดตัวใดตัวหนึ่ง เกมจะแจ้งตอนเปิด
+4. ม็อดนี้ประกาศพึ่งพา `epicfight` (≥ 20.14.3), `wom`, `ef_cz`, `epicsanji` ถ้าขาดตัวใดตัวหนึ่ง เกมจะแจ้งตอนเปิด
 
 ## 10. ส่งมอบ
 - โค้ดอยู่บน branch `claude/fist-styles` (ไม่แตะ `main` จนกว่าผู้ใช้สั่ง)
 - GitHub Actions build ทุก push แล้วอัปโหลด `.jar` เป็น Release ชื่อ `latest` ผู้ใช้โหลดจากหน้า Releases บนมือถือได้โดยตรง
-- ก่อนใช้ ต้องมี Epic Fight, WOM และ ef_cz อยู่ในแพ็ก
+- ก่อนใช้ ต้องมี Epic Fight, WOM, ef_cz และ EpicSanji อยู่ในแพ็ก
