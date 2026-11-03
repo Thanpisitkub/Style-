@@ -1,0 +1,82 @@
+{
+  "category": "sword",
+  "hit_particle": "epicfight:entity.hit.blunt",
+  "hit_sound": "epicfight:entity.hit.blunt",
+  "swing_sound": "epicfight:entity.weapon.whoosh_hard",
+  "styles": {
+    "cases": [
+      {
+        "condition": "epicfight:offhand_category",
+        "predicate": {
+          "category": "sword"
+        },
+        "style": "two_hand"
+      }
+    ],
+    "default": "one_hand"
+  },
+  "offhand_item_compatible_predicate": {
+    "condition": "epicfight:offhand_category",
+    "predicate": {
+      "category": "greatsword"
+    }
+  },
+  "collider": {
+    "number": 3,
+    "center": [
+      0.0,
+      0.0,
+      -0.75
+    ],
+    "size": [
+      0.4,
+      0.4,
+      0.8
+    ]
+  },
+  "combos": {
+    "one_hand": [
+      "wom:biped/skill/antitheus_ascended_auto_1",
+      "epicsanji:biped/combat/sanji_auto_2",
+      "wom:biped/skill/antitheus_ascended_auto_2",
+      "wom:biped/skill/strong_punch",
+      "wom:biped/combat/antitheus_auto_3",
+      "wom:biped/skill/antitheus_ascended_auto_3",
+      "wom:biped/skill/torment_berserk_dash",
+      "wom:biped/combat/agony_air_attack_2"
+    ],
+    "two_hand": [
+      "wom:biped/skill/antitheus_ascended_auto_1",
+      "epicsanji:biped/combat/sanji_auto_2",
+      "wom:biped/skill/antitheus_ascended_auto_2",
+      "wom:biped/skill/strong_punch",
+      "wom:biped/combat/antitheus_auto_3",
+      "wom:biped/skill/antitheus_ascended_auto_3",
+      "wom:biped/skill/torment_berserk_dash",
+      "wom:biped/combat/agony_air_attack_2"
+    ],
+    "mount": [
+      "epicfight:biped/combat/sword_mount_attack"
+    ]
+  },
+  "innate_skills": {
+    "one_hand": "epicfight:relentless_combo",
+    "two_hand": "epicfight:relentless_combo"
+  },
+  "livingmotion_modifier": {
+    "one_hand": {
+      "block": "epicfight:biped/skill/guard_uchigatana",
+      "idle": "wom:biped/living/orbit_idle",
+      "run": "wom:biped/living/orbit_run",
+      "walk": "wom:biped/living/orbit_walk",
+      "chase": "wom:biped/living/orbit_run"
+    },
+    "two_hand": {
+      "block": "epicfight:biped/skill/guard_uchigatana",
+      "idle": "wom:biped/living/orbit_idle",
+      "run": "wom:biped/living/orbit_run",
+      "walk": "wom:biped/living/orbit_walk",
+      "chase": "wom:biped/living/orbit_run"
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "category": "sword",
+  "hit_particle": "epicfight:entity.hit.blunt",
+  "hit_sound": "epicfight:entity.hit.blunt",
+  "swing_sound": "epicfight:entity.weapon.whoosh_hard",
+  "styles": {
+    "cases": [
+      {
+        "condition": "epicfight:offhand_category",
+        "predicate": {
+          "category": "sword"
+        },
+        "style": "two_hand"
+      }
+    ],
+    "default": "one_hand"
+  },
+  "offhand_item_compatible_predicate": {
+    "condition": "epicfight:offhand_category",
+    "predicate": {
+      "category": "greatsword"
+    }
+  },
+  "collider": {
+    "number": 3,
+    "center": [
+      0.0,
+      0.0,
+      -0.75
+    ],
+    "size": [
+      0.4,
+      0.4,
+      0.8
+    ]
+  },
+  "combos": {
+    "one_hand": [
+      "wom:biped/combat/antitheus_auto_2",
+      "wom:biped/skill/torment_berserk_auto_1",
+      "wom:biped/combat/antitheus_auto_3",
+      "wom:biped/combat/antitheus_agression",
+      "wom:biped/skill/kick_2",
+      "wom:biped/skill/torment_berserk_auto_2",
+      "wom:biped/skill/torment_berserk_dash",
+      "wom:biped/skill/torment_berserk_airslam"
+    ],
+    "two_hand": [
+      "wom:biped/combat/antitheus_auto_2",
+      "wom:biped/skill/torment_berserk_auto_1",
+      "wom:biped/combat/antitheus_auto_3",
+      "wom:biped/combat/antitheus_agression",
+      "wom:biped/skill/kick_2",
+      "wom:biped/skill/torment_berserk_auto_2",
+      "wom:biped/skill/torment_berserk_dash",
+      "wom:biped/skill/torment_berserk_airslam"
+    ],
+    "mount": [
+      "epicfight:biped/combat/sword_mount_attack"
+    ]
+  },
+  "innate_skills": {
+    "one_hand": "epicfight:relentless_combo",
+    "two_hand": "epicfight:relentless_combo"
+  },
+  "livingmotion_modifier": {
+    "one_hand": {
+      "block": "epicfight:biped/skill/guard_uchigatana",
+      "idle": "wom:biped/living/torment_berserk_idle",
+      "run": "wom:biped/living/torment_berserk_run",
+      "walk": "wom:biped/living/torment_berserk_walk",
+      "chase": "wom:biped/living/torment_berserk_run"
+    },
+    "two_hand": {
+      "block": "epicfight:biped/skill/guard_uchigatana",
+      "idle": "wom:biped/living/torment_berserk_idle",
+      "run": "wom:biped/living/torment_berserk_run",
+      "walk": "wom:biped/living/torment_berserk_walk",
+      "chase": "wom:biped/living/torment_berserk_run"
+    }
+  }
+}
