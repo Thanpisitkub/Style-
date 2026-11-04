@@ -3,7 +3,9 @@ package dev.fiststyle;
 import com.mojang.logging.LogUtils;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 import net.minecraft.nbt.CompoundTag;
@@ -24,7 +26,9 @@ import org.slf4j.Logger;
  *
  * <p>Epic Fight is not on the compile classpath, so the animation of an Epic Fight damage source is
  * read by reflection only. If the Epic Fight API differs from what is expected, one warning is
- * logged and the hook stays off for the rest of the session; the combos themselves are unaffected.
+ * logged and the hook stays off for the rest of the session; the combos themselves are unaffected. An id
+ * that is read fine but differs from the expected format throws nothing, so the first few distinct ids of
+ * Epic Fight hits by a Style holder are logged at INFO next to the id expected for combo 4.
  *
  * <p>Vanilla knockback runs after {@link LivingHurtEvent}, so a launch applied there would be
  * overwritten. The target is only marked in {@link #onHurt} and launched on its next tick in
@@ -44,6 +48,11 @@ public final class LaunchHandler {
     private static final String ACCESSOR_CLASS =
             "yesman.epicfight.api.animation.AnimationManager$AnimationAccessor";
     private static final String[] ID_METHODS = {"registryName", "getRegistryName"};
+
+    /** Upper bound on the distinct animation ids {@link #logHit} writes to the log per session. */
+    static final int MAX_LOGGED_IDS = 5;
+    private static final String NO_ID = "<none>";
+    private static final Set<String> LOGGED_IDS = new HashSet<>();
 
     /** Set once the hook has failed and been logged; afterwards {@link #animationIdOf} returns null. */
     private static final AtomicBoolean DISABLED = new AtomicBoolean(false);
@@ -69,8 +78,13 @@ public final class LaunchHandler {
         if (!(held instanceof StyleItem style)) {
             return;
         }
+        String expected = StyleStats.UPPERCUT[style.styleNumber - 1];
         String id = animationIdOf(source);
-        if (id != null && idMatches(id, StyleStats.UPPERCUT[style.styleNumber - 1])) {
+        boolean launch = id != null && idMatches(id, expected);
+        if (id != null || isEpicFightSource(source)) {
+            logHit(style.styleNumber, id, expected, launch);
+        }
+        if (launch) {
             target.getPersistentData().putBoolean(FLAG, true);
         }
     }
@@ -90,6 +104,34 @@ public final class LaunchHandler {
         target.setDeltaMovement(motion.x, LAUNCH_VELOCITY, motion.z);
         target.hurtMarked = true;
         target.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, SLOW_FALL_TICKS));
+    }
+
+    /** True when reflection already resolved {@code source} as an Epic Fight source and the hook is still on. */
+    private static boolean isEpicFightSource(DamageSource source) {
+        Optional<Method> getter = ANIMATION_GETTERS.get(source.getClass());
+        return !DISABLED.get() && getter != null && getter.isPresent();
+    }
+
+    /**
+     * Logs what an Epic Fight hit by a Style holder looked like, so an id mismatch (which throws nothing
+     * and so triggers no warning) can still be diagnosed from the log. Capped at {@link #MAX_LOGGED_IDS}
+     * distinct ids per session; {@code id == null} means no id could be read from the Epic Fight source.
+     */
+    private static void logHit(int styleNumber, String id, String expected, boolean launch) {
+        if (!firstSighting(id == null ? NO_ID : id)) {
+            return;
+        }
+        if (id == null) {
+            LOGGER.info("[Style] Epic Fight hit by Style {}: no animation id could be read "
+                    + "(animation missing or unreadable), combo-4 id is '{}'", styleNumber, expected);
+        } else {
+            LOGGER.info("[Style] Epic Fight hit by Style {}: read animation id '{}', combo-4 id is '{}', match={}",
+                    styleNumber, id, expected, launch);
+        }
+    }
+
+    private static synchronized boolean firstSighting(String key) {
+        return LOGGED_IDS.size() < MAX_LOGGED_IDS && LOGGED_IDS.add(key);
     }
 
     private static ServerPlayer attackerOf(DamageSource source) {
@@ -205,7 +247,7 @@ public final class LaunchHandler {
 
     private static void disable(Throwable cause) {
         if (DISABLED.compareAndSet(false, true)) {
-            LOGGER.warn("Style launch hook disabled: could not read the Epic Fight animation from a damage source "
+            LOGGER.warn("[Style] Launch hook disabled: could not read the Epic Fight animation from a damage source "
                     + "(the Epic Fight API probably differs from what this mod expects). Combo 4 will not launch "
                     + "targets; the combos themselves still work.", cause);
         }

@@ -35,7 +35,7 @@ Release ชื่อ `latest` ถูกสร้างใหม่ทุกค�
 2. tooltip ของไอเท็มแสดงดาเมจและความเร็วของ Style นั้นตามตารางด้านล่าง
 3. ถือแต่ละสไตล์แล้วลองต่อย เล่นท่าต่อย 1–6 ครบ รวมท่าวิ่งแล้วต่อย และท่ากระโดดแล้วต่อย
 4. ต่อย 4 ซัดเป้าหมายขึ้นฟ้า แล้วต่อย 5–6 ยังต่อติดขณะเป้าหมายลอยอยู่
-5. ถ้ามีอะไรผิดปกติ ส่งบรรทัด log ตามหัวข้อ "แก้ปัญหา" พร้อมเลขสไตล์และเลขท่า
+5. ถ้ามีอะไรผิดปกติ ส่งบรรทัด log ทุกบรรทัดที่มี `[Style]` (ใน `logs/latest.log`) พร้อมเลขสไตล์และเลขท่า ดูรายละเอียดในหัวข้อ "แก้ปัญหา" ควรต่อยคอมโบท่า 1 ถึง 4 ตามลำดับก่อนที่จะลองท่าอื่น เพราะ log บันทึกท่าที่ต่างกันได้ไม่เกิน 5 ท่าต่อรอบเกม
 
 ## ท่าที่ 4 ซัดศัตรูขึ้นฟ้า
 
@@ -44,10 +44,18 @@ Epic Fight ไม่มีท่าซัดขึ้นให้เลือก
 hook นี้อ่านชื่ออนิเมชั่นจาก Epic Fight ด้วย reflection เพราะตอนคอมไพล์ไม่มี Epic Fight jar ถ้า API ของ Epic Fight รุ่นที่ใช้ไม่ตรงกับที่คาดไว้ hook จะปิดตัวเอง เกมไม่พังและท่าคอมโบยังเล่นตามปกติ แต่ต่อย 4 จะไม่ซัดขึ้น และ log จะมีบรรทัดแบบนี้หนึ่งครั้ง
 
 ```
-[WARN] Style launch hook disabled: could not read the Epic Fight animation from a damage source (the Epic Fight API probably differs from what this mod expects). Combo 4 will not launch targets; the combos themselves still work.
+[WARN] [Style] Launch hook disabled: could not read the Epic Fight animation from a damage source (the Epic Fight API probably differs from what this mod expects). Combo 4 will not launch targets; the combos themselves still work.
 ```
 
 ตามด้วยข้อความ error ของ Java สองสามบรรทัด ถ้าเจอบรรทัดนี้ให้ส่งมาทั้งบรรทัดและบรรทัดถัดไป
+
+กรณีที่อ่านชื่อท่าได้แต่รูปแบบไม่ตรงกับที่คาดไว้ จะไม่มี error อะไรเลย ต่อย 4 แค่ไม่ซัดขึ้น ม็อดจึงบันทึกบรรทัด INFO ไว้ให้ตรวจสอบ เมื่อผู้เล่นที่ถือไอเท็ม Style ต่อยโดนด้วยท่าของ Epic Fight (บันทึกไม่เกิน 5 ท่าที่ต่างกันต่อรอบเกม)
+
+```
+[INFO] [Style] Epic Fight hit by Style 3: read animation id 'wom:biped/skill/kick_1', combo-4 id is 'wom:biped/skill/kick_1', match=true
+```
+
+`read animation id` คือชื่อท่าที่ hook อ่านได้ `combo-4 id` คือชื่อท่าที่คาดว่าเป็นต่อย 4 ของสไตล์นั้น ถ้าสองชื่อไม่ตรงกันจะขึ้น `match=false` และต่อย 4 ไม่ซัดขึ้น ถ้าอ่านชื่อท่าไม่ได้เลยจะขึ้นบรรทัด `no animation id could be read` แทน
 
 ## ตารางสไตล์
 
@@ -85,13 +93,13 @@ Style 3–8 มีท่าเตะของ EpicSanji ปนอยู่
 
 ## แก้ปัญหา
 
-ส่งบรรทัด log ที่เกี่ยวข้องมาให้ดู ไฟล์อยู่ที่ `logs/latest.log` หรือ `logs/debug.log` ในโฟลเดอร์ของแพ็ก ให้ส่งบรรทัดที่มีคำว่า `fiststyle`, `epicfight`, `ERROR` หรือ `WARN` พร้อมบอกเลขสไตล์และเลขท่าที่ผิดปกติ
+ส่งบรรทัด log ที่เกี่ยวข้องมาให้ดู ไฟล์อยู่ที่ `logs/latest.log` หรือ `logs/debug.log` ในโฟลเดอร์ของแพ็ก ให้ส่งบรรทัดที่มีคำว่า `[Style]`, `fiststyle`, `epicfight`, `ERROR` หรือ `WARN` พร้อมบอกเลขสไตล์และเลขท่าที่ผิดปกติ
 
 | อาการ | สาเหตุที่น่าจะเป็น |
 |---|---|
 | เกมไม่เข้า ขึ้นว่าขาด mod | ขาด `epicfight`, `wom`, `ef_cz` หรือ `epicsanji` หรือรุ่น Epic Fight ต่ำกว่า 20.14.3 |
 | ไม่เจอไอเท็ม | เปิดแท็บ Creative ชื่อ Style หรือพิมพ์ `/give @s fiststyle:style_1` |
 | ถือไอเท็มแล้วท่าไม่เปลี่ยน | ไฟล์สไตล์โหลดไม่ผ่าน ดู log ตอนเข้าเกมว่ามี error เกี่ยวกับ `fiststyle` |
-| ต่อย 4 ไม่ซัดเป้าหมายขึ้น | ถ้า log มี `Style launch hook disabled` แปลว่า API ของ Epic Fight ไม่ตรงกับที่ hook คาดไว้ ส่งบรรทัดนั้นมา ถ้าไม่มีบรรทัดนี้ ให้ตรวจว่าท่าที่เล่นเป็นท่าต่อย 4 จริง (ตรงกับท่าในช่องที่ 4 ของ `tools/styles.json`) |
+| ต่อย 4 ไม่ซัดเป้าหมายขึ้น | ส่งทุกบรรทัดใน `logs/latest.log` ที่มี `[Style]` มาให้ดู โดยเฉพาะบรรทัด `[Style] Epic Fight hit by Style N: read animation id ...` ที่บันทึกตอนต่อยโดนครั้งแรก ๆ ถ้าเป็น `match=false` แปลว่าชื่อท่าที่อ่านได้ไม่ตรงกับชื่อท่าต่อย 4 ถ้ามี `[Style] Launch hook disabled` แปลว่า API ของ Epic Fight ไม่ตรงกับที่ hook คาดไว้ ถ้าไม่มีบรรทัด `[Style]` เลย ให้ตรวจว่าถือไอเท็ม Style ในมือหลักและอยู่ในโหมดต่อสู้ของ Epic Fight แล้วลองใหม่ |
 | ท่าเตะของ EpicSanji ไม่ทำงาน (Style 3–8) | แจ้งเลขสไตล์ จะสลับเป็นท่า WOM ให้ |
 | ท่าไหนดูแปลก | แจ้งเลขสไตล์กับเลขท่า แล้วแก้เป็นแถวเดียวใน `tools/styles.json` |
