@@ -18,6 +18,7 @@ REQUIRED_CLASSES = (
     "dev/fiststyle/FistStyleMod.class",
     "dev/fiststyle/StyleItem.class",
     "dev/fiststyle/StyleStats.class",
+    "dev/fiststyle/LaunchHandler.class",
 )
 PNG_SIGNATURE = b"\x89PNG\r\n\x1a\n"
 
