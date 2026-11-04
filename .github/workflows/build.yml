@@ -19,12 +19,28 @@ jobs:
           distribution: temurin
           java-version: '17'
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python dependencies
+        run: pip install pillow
+
+      - name: Unit tests
+        run: python3 -m unittest discover -s tools -p 'test_*.py'
+
+      - name: Generated files are up to date
+        run: python3 tools/generate.py && git diff --exit-code -- src/main/java src/main/resources/data src/main/resources/assets/fiststyle/lang src/main/resources/assets/fiststyle/models
+
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: 8.1.1
 
       - name: Build
         run: gradle build --no-daemon
+
+      - name: Verify jar
+        run: python3 tools/verify_jar.py build/libs/fiststyle-1.0.0.jar
 
       - uses: actions/upload-artifact@v4
         with:
