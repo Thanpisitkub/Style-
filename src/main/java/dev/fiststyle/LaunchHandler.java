@@ -225,6 +225,9 @@ public final class LaunchHandler {
      * whole id, so {@code kick_1} does not match {@code kick_10}.
      */
     static boolean idMatches(String found, String expected) {
+        if (expected.isEmpty()) {
+            return false;
+        }
         int from = 0;
         while (true) {
             int at = found.indexOf(expected, from);
