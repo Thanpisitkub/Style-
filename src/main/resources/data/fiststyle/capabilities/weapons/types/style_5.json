@@ -1,6 +1,6 @@
 {
   "category": "sword",
-  "hit_particle": "epicfight:entity.hit.blunt",
+  "hit_particle": "epicfight:hit_blunt",
   "hit_sound": "epicfight:entity.hit.blunt",
   "swing_sound": "epicfight:entity.weapon.whoosh_hard",
   "styles": {
@@ -36,21 +36,21 @@
   },
   "combos": {
     "one_hand": [
-      "wom:biped/combat/antitheus_auto_1",
-      "wom:biped/combat/antitheus_auto_2",
+      "wom:biped/combat/torment_auto_3",
+      "wom:biped/combat/torment_auto_4",
       "wom:biped/combat/agony_auto_4",
-      "wom:biped/skill/agony_rising_eagle",
-      "wom:biped/combat/antitheus_auto_4",
+      "wom:biped/combat/torment_charged_attack_3",
+      "wom:biped/combat/agony_auto_2",
       "epicsanji:biped/combat/sanji_auto_3",
       "wom:biped/skill/torment_berserk_dash",
       "wom:biped/combat/torment_airslam"
     ],
     "two_hand": [
-      "wom:biped/combat/antitheus_auto_1",
-      "wom:biped/combat/antitheus_auto_2",
+      "wom:biped/combat/torment_auto_3",
+      "wom:biped/combat/torment_auto_4",
       "wom:biped/combat/agony_auto_4",
-      "wom:biped/skill/agony_rising_eagle",
-      "wom:biped/combat/antitheus_auto_4",
+      "wom:biped/combat/torment_charged_attack_3",
+      "wom:biped/combat/agony_auto_2",
       "epicsanji:biped/combat/sanji_auto_3",
       "wom:biped/skill/torment_berserk_dash",
       "wom:biped/combat/torment_airslam"

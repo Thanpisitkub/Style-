@@ -11,11 +11,11 @@ public final class StyleStats {
         "wom:biped/combat/enderblaster_twohand_tishnaw",
         "wom:biped/skill/kick_1",
         "wom:biped/combat/agony_clawstrike",
-        "wom:biped/skill/agony_rising_eagle",
+        "wom:biped/combat/torment_charged_attack_3",
         "epicsanji:biped/combat/sanji_auto_4",
         "wom:biped/skill/strong_punch",
-        "wom:biped/combat/antitheus_guillotine",
-        "wom:biped/combat/antitheus_agression",
+        "wom:biped/combat/blackstar_basic_attack_4",
+        "wom:biped/combat/blackstar_basic_attack_3",
         "wom:biped/combat/torment_charged_attack_2"
     };
 

@@ -46,6 +46,29 @@ class GenerateTest(unittest.TestCase):
             self.assertEqual(len(combos["one_hand"]), 8)
             self.assertEqual(combos["mount"], ["epicfight:biped/combat/sword_mount_attack"])
 
+    def test_no_crashing_animations(self):
+        # These WOM animations fire events that call Optional.get() on a skill the
+        # player does not have (Demon Mark passive etc.), which crashes the server
+        # tick when a plain player uses them (seen in a real game log, 2026-11-05).
+        unsafe = {
+            "wom:biped/combat/antitheus_auto_1",
+            "wom:biped/combat/antitheus_auto_2",
+            "wom:biped/combat/antitheus_auto_3",
+            "wom:biped/combat/antitheus_auto_4",
+            "wom:biped/combat/antitheus_agression",
+            "wom:biped/combat/antitheus_guillotine",
+            "wom:biped/skill/antitheus_ascended_blink",
+            "wom:biped/skill/agony_rising_eagle",
+            "wom:biped/skill/ender_obscuris",
+            "wom:biped/skill/time_travel",
+        }
+        for s in STYLES:
+            for animation in s["combos"]:
+                self.assertNotIn(animation, unsafe, f"style {s['n']} uses a crashing animation")
+
+    def test_uppercuts_are_distinct(self):
+        self.assertEqual(len({s["combos"][3] for s in STYLES}), len(STYLES))
+
     def test_all_animation_ids_known(self):
         for s in STYLES:
             for animation in s["combos"]:

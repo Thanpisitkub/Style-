@@ -1,6 +1,6 @@
 {
   "category": "sword",
-  "hit_particle": "epicfight:entity.hit.blunt",
+  "hit_particle": "epicfight:hit_blunt",
   "hit_sound": "epicfight:entity.hit.blunt",
   "swing_sound": "epicfight:entity.weapon.whoosh_hard",
   "styles": {
@@ -36,20 +36,20 @@
   },
   "combos": {
     "one_hand": [
-      "wom:biped/combat/antitheus_auto_2",
+      "wom:biped/combat/torment_auto_2",
       "wom:biped/skill/torment_berserk_auto_1",
-      "wom:biped/combat/antitheus_auto_3",
-      "wom:biped/combat/antitheus_agression",
+      "wom:biped/combat/agony_auto_1",
+      "wom:biped/combat/blackstar_basic_attack_3",
       "wom:biped/skill/kick_2",
       "wom:biped/skill/torment_berserk_auto_2",
       "wom:biped/skill/torment_berserk_dash",
       "wom:biped/skill/torment_berserk_airslam"
     ],
     "two_hand": [
-      "wom:biped/combat/antitheus_auto_2",
+      "wom:biped/combat/torment_auto_2",
       "wom:biped/skill/torment_berserk_auto_1",
-      "wom:biped/combat/antitheus_auto_3",
-      "wom:biped/combat/antitheus_agression",
+      "wom:biped/combat/agony_auto_1",
+      "wom:biped/combat/blackstar_basic_attack_3",
       "wom:biped/skill/kick_2",
       "wom:biped/skill/torment_berserk_auto_2",
       "wom:biped/skill/torment_berserk_dash",

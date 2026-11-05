@@ -1,6 +1,6 @@
 {
   "category": "sword",
-  "hit_particle": "epicfight:entity.hit.blunt",
+  "hit_particle": "epicfight:hit_blunt",
   "hit_sound": "epicfight:entity.hit.blunt",
   "swing_sound": "epicfight:entity.weapon.whoosh_hard",
   "styles": {
@@ -40,7 +40,7 @@
       "epicsanji:biped/combat/sanji_auto_2",
       "wom:biped/skill/antitheus_ascended_auto_2",
       "wom:biped/skill/strong_punch",
-      "wom:biped/combat/antitheus_auto_3",
+      "wom:biped/combat/torment_auto_3",
       "wom:biped/skill/antitheus_ascended_auto_3",
       "wom:biped/skill/torment_berserk_dash",
       "wom:biped/combat/agony_air_attack_2"
@@ -50,7 +50,7 @@
       "epicsanji:biped/combat/sanji_auto_2",
       "wom:biped/skill/antitheus_ascended_auto_2",
       "wom:biped/skill/strong_punch",
-      "wom:biped/combat/antitheus_auto_3",
+      "wom:biped/combat/torment_auto_3",
       "wom:biped/skill/antitheus_ascended_auto_3",
       "wom:biped/skill/torment_berserk_dash",
       "wom:biped/combat/agony_air_attack_2"
