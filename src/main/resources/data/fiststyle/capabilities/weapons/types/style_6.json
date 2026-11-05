@@ -36,23 +36,23 @@
   },
   "combos": {
     "one_hand": [
-      "ef_cz:biped/sfa/shogun/shogun_auto1",
-      "ef_cz:biped/sfa/shogun/shogun_auto2",
+      "wom:biped/combat/torment_auto_1",
+      "wom:biped/combat/torment_auto_2",
       "wom:biped/skill/antitheus_ascended_auto_1",
       "epicsanji:biped/combat/sanji_auto_4",
       "wom:biped/skill/antitheus_ascended_auto_2",
       "wom:biped/skill/antitheus_ascended_auto_3",
-      "ef_cz:biped/sfa/shogun/shogun_dash2",
+      "wom:biped/combat/enderblaster_onehand_dash",
       "wom:biped/combat/agony_air_attack_1"
     ],
     "two_hand": [
-      "ef_cz:biped/sfa/shogun/shogun_auto1",
-      "ef_cz:biped/sfa/shogun/shogun_auto2",
+      "wom:biped/combat/torment_auto_1",
+      "wom:biped/combat/torment_auto_2",
       "wom:biped/skill/antitheus_ascended_auto_1",
       "epicsanji:biped/combat/sanji_auto_4",
       "wom:biped/skill/antitheus_ascended_auto_2",
       "wom:biped/skill/antitheus_ascended_auto_3",
-      "ef_cz:biped/sfa/shogun/shogun_dash2",
+      "wom:biped/combat/enderblaster_onehand_dash",
       "wom:biped/combat/agony_air_attack_1"
     ],
     "mount": [

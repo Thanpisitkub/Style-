@@ -37,22 +37,22 @@
   "combos": {
     "one_hand": [
       "wom:biped/combat/enderblaster_twohand_auto_1",
-      "ef_cz:biped/mk/kabal/kabal_auto1",
+      "wom:biped/combat/torment_auto_2",
       "wom:biped/combat/enderblaster_onehand_auto_3",
       "wom:biped/skill/kick_1",
-      "ef_cz:biped/mk/kabal/kabal_auto3",
+      "wom:biped/combat/torment_auto_3",
       "epicsanji:biped/combat/sanji_auto_1",
-      "ef_cz:biped/mk/kabal/kabal_dash2",
+      "wom:biped/combat/torment_dash",
       "wom:biped/combat/enderblaster_onehand_jumpkick"
     ],
     "two_hand": [
       "wom:biped/combat/enderblaster_twohand_auto_1",
-      "ef_cz:biped/mk/kabal/kabal_auto1",
+      "wom:biped/combat/torment_auto_2",
       "wom:biped/combat/enderblaster_onehand_auto_3",
       "wom:biped/skill/kick_1",
-      "ef_cz:biped/mk/kabal/kabal_auto3",
+      "wom:biped/combat/torment_auto_3",
       "epicsanji:biped/combat/sanji_auto_1",
-      "ef_cz:biped/mk/kabal/kabal_dash2",
+      "wom:biped/combat/torment_dash",
       "wom:biped/combat/enderblaster_onehand_jumpkick"
     ],
     "mount": [

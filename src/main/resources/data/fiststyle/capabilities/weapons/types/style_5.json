@@ -36,24 +36,24 @@
   },
   "combos": {
     "one_hand": [
-      "ef_cz:biped/sfa/ironclad/ironclad_auto1",
-      "ef_cz:biped/sfa/shogun/shogun_auto1",
-      "ef_cz:biped/sfa/ironclad/ironclad_auto2",
-      "ef_cz:biped/sfa/ironclad/ironclad_fist_charge",
-      "ef_cz:biped/sfa/shogun/shogun_auto2",
+      "wom:biped/combat/antitheus_auto_1",
+      "wom:biped/combat/antitheus_auto_2",
+      "wom:biped/combat/agony_auto_4",
+      "wom:biped/skill/agony_rising_eagle",
+      "wom:biped/combat/antitheus_auto_4",
       "epicsanji:biped/combat/sanji_auto_3",
-      "ef_cz:biped/sfa/shogun/shogun_dash1",
-      "ef_cz:biped/sfa/ironclad/ironclad_airslash"
+      "wom:biped/skill/torment_berserk_dash",
+      "wom:biped/combat/torment_airslam"
     ],
     "two_hand": [
-      "ef_cz:biped/sfa/ironclad/ironclad_auto1",
-      "ef_cz:biped/sfa/shogun/shogun_auto1",
-      "ef_cz:biped/sfa/ironclad/ironclad_auto2",
-      "ef_cz:biped/sfa/ironclad/ironclad_fist_charge",
-      "ef_cz:biped/sfa/shogun/shogun_auto2",
+      "wom:biped/combat/antitheus_auto_1",
+      "wom:biped/combat/antitheus_auto_2",
+      "wom:biped/combat/agony_auto_4",
+      "wom:biped/skill/agony_rising_eagle",
+      "wom:biped/combat/antitheus_auto_4",
       "epicsanji:biped/combat/sanji_auto_3",
-      "ef_cz:biped/sfa/shogun/shogun_dash1",
-      "ef_cz:biped/sfa/ironclad/ironclad_airslash"
+      "wom:biped/skill/torment_berserk_dash",
+      "wom:biped/combat/torment_airslam"
     ],
     "mount": [
       "epicfight:biped/combat/sword_mount_attack"

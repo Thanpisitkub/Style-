@@ -1,6 +1,6 @@
 # Style — สไตล์หมัด Epic Fight 10 สไตล์
 
-ม็อด Forge 1.20.1 ที่เพิ่มไอเท็ม **Style 1 ถึง Style 10** ให้ Epic Fight แต่ละชิ้นเป็นสไตล์หมัดของตัวเอง ใช้ท่าจาก Weapons of Miracles, ef_cz และ EpicSanji
+ม็อด Forge 1.20.1 ที่เพิ่มไอเท็ม **Style 1 ถึง Style 10** ให้ Epic Fight แต่ละชิ้นเป็นสไตล์หมัดของตัวเอง ใช้ท่าจาก Weapons of Miracles และ EpicSanji
 
 - เสกจากแท็บ Creative ชื่อ **Style** (ไอคอนตัว S ขาวบนพื้นดำ)
 - ถือแล้วไม่เห็นไอเท็มในมือ ใช้มือเปล่าต่อยตามสไตล์
@@ -16,7 +16,6 @@
 | Forge | `forge` | 1.20.1 (47 ขึ้นไป) |
 | Epic Fight | `epicfight` | 20.14.3 ขึ้นไป |
 | Weapons of Miracles | `wom` | 2.0.171 |
-| ef_cz | `ef_cz` | 0.3.9.10 |
 | EpicSanji | `epicsanji` | 20.1.6.1 |
 
 ม็อดตัวไหนก็ใช้รุ่นอื่นได้ (เกมตรวจแค่ว่ามีม็อดนั้นอยู่) แต่ชื่อท่าถูกตรวจกับรุ่นในตาราง ถ้าเกมของคุณใช้ EpicSanji รุ่น `20.14.16-compat-beta15-serverfix` แล้ว Style 3–8 ไม่ทำงาน แปลว่าชื่อท่าอาจต่างกัน ให้ส่ง log มาแก้
@@ -99,7 +98,7 @@ Style 3–8 มีท่าเตะของ EpicSanji ปนอยู่
 
 | อาการ | สาเหตุที่น่าจะเป็น |
 |---|---|
-| เกมไม่เข้า ขึ้นว่าขาด mod | ขาด `epicfight`, `wom`, `ef_cz` หรือ `epicsanji` หรือรุ่น Epic Fight ต่ำกว่า 20.14.3 |
+| เกมไม่เข้า ขึ้นว่าขาด mod | ขาด `epicfight`, `wom` หรือ `epicsanji` หรือรุ่น Epic Fight ต่ำกว่า 20.14.3 |
 | ไม่เจอไอเท็ม | เปิดแท็บ Creative ชื่อ Style หรือพิมพ์ `/give @s fiststyle:style_1` |
 | ถือไอเท็มแล้วท่าไม่เปลี่ยน | ไฟล์สไตล์โหลดไม่ผ่าน ดู log ตอนเข้าเกมว่ามี error เกี่ยวกับ `fiststyle` |
 | ต่อย 4 ไม่ซัดเป้าหมายขึ้น | ส่งทุกบรรทัดใน `logs/latest.log` ที่มี `[Style]` มาให้ดู โดยเฉพาะบรรทัด `[Style] Epic Fight hit by Style N: read animation id ...` ที่บันทึกตอนต่อยโดนครั้งแรก ๆ ถ้าเป็น `match=false` แปลว่าชื่อท่าที่อ่านได้ไม่ตรงกับชื่อท่าต่อย 4 ถ้ามี `[Style] Launch hook disabled` แปลว่า API ของ Epic Fight ไม่ตรงกับที่ hook คาดไว้ ถ้าไม่มีบรรทัด `[Style]` เลย ให้ตรวจว่าถือไอเท็ม Style ในมือหลักและอยู่ในโหมดต่อสู้ของ Epic Fight แล้วลองใหม่ |

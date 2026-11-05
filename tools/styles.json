@@ -7,12 +7,12 @@
       "idle": "enderblaster_onehand",
       "combos": [
         "wom:biped/combat/enderblaster_onehand_auto_1",
-        "ef_cz:biped/mk/kabal/kabal_auto1",
+        "wom:biped/combat/torment_auto_1",
         "wom:biped/combat/enderblaster_onehand_auto_2",
-        "ef_cz:biped/mk/kabal/kabal_auto2",
+        "wom:biped/combat/torment_charged_attack_1",
         "wom:biped/combat/enderblaster_onehand_auto_3",
         "wom:biped/combat/enderblaster_onehand_auto_4",
-        "ef_cz:biped/mk/kabal/kabal_dash1",
+        "wom:biped/combat/enderblaster_onehand_dash",
         "wom:biped/combat/enderblaster_onehand_jumpkick"
       ]
     },
@@ -22,14 +22,14 @@
       "speed": 2.4,
       "idle": "enderblaster_twohand",
       "combos": [
-        "ef_cz:biped/mk/kabal/kabal_auto1",
+        "wom:biped/combat/agony_auto_1",
         "wom:biped/combat/enderblaster_twohand_auto_1",
         "wom:biped/combat/enderblaster_twohand_auto_2",
         "wom:biped/combat/enderblaster_twohand_tishnaw",
         "wom:biped/combat/enderblaster_twohand_auto_3",
         "wom:biped/combat/enderblaster_twohand_auto_4",
         "wom:biped/combat/enderblaster_twohand_dash",
-        "ef_cz:biped/mk/kabal/kabal_airslash"
+        "wom:biped/combat/agony_air_attack_4"
       ]
     },
     {
@@ -39,12 +39,12 @@
       "idle": "nova",
       "combos": [
         "wom:biped/combat/enderblaster_twohand_auto_1",
-        "ef_cz:biped/mk/kabal/kabal_auto1",
+        "wom:biped/combat/torment_auto_2",
         "wom:biped/combat/enderblaster_onehand_auto_3",
         "wom:biped/skill/kick_1",
-        "ef_cz:biped/mk/kabal/kabal_auto3",
+        "wom:biped/combat/torment_auto_3",
         "epicsanji:biped/combat/sanji_auto_1",
-        "ef_cz:biped/mk/kabal/kabal_dash2",
+        "wom:biped/combat/torment_dash",
         "wom:biped/combat/enderblaster_onehand_jumpkick"
       ]
     },
@@ -54,13 +54,13 @@
       "speed": 2.1,
       "idle": "agony",
       "combos": [
-        "ef_cz:biped/sfa/ironclad/ironclad_auto1",
-        "ef_cz:biped/sfa/ironclad/ironclad_auto2",
+        "wom:biped/combat/agony_auto_2",
+        "wom:biped/combat/agony_auto_3",
         "wom:biped/combat/enderblaster_twohand_auto_2",
         "wom:biped/combat/agony_clawstrike",
         "wom:biped/combat/enderblaster_twohand_auto_4",
         "epicsanji:biped/combat/sanji_auto_2",
-        "ef_cz:biped/sfa/ironclad/ironclad_dash",
+        "wom:biped/combat/enderblaster_twohand_dash",
         "wom:biped/combat/agony_airslash"
       ]
     },
@@ -70,14 +70,14 @@
       "speed": 2.0,
       "idle": "moonless",
       "combos": [
-        "ef_cz:biped/sfa/ironclad/ironclad_auto1",
-        "ef_cz:biped/sfa/shogun/shogun_auto1",
-        "ef_cz:biped/sfa/ironclad/ironclad_auto2",
-        "ef_cz:biped/sfa/ironclad/ironclad_fist_charge",
-        "ef_cz:biped/sfa/shogun/shogun_auto2",
+        "wom:biped/combat/antitheus_auto_1",
+        "wom:biped/combat/antitheus_auto_2",
+        "wom:biped/combat/agony_auto_4",
+        "wom:biped/skill/agony_rising_eagle",
+        "wom:biped/combat/antitheus_auto_4",
         "epicsanji:biped/combat/sanji_auto_3",
-        "ef_cz:biped/sfa/shogun/shogun_dash1",
-        "ef_cz:biped/sfa/ironclad/ironclad_airslash"
+        "wom:biped/skill/torment_berserk_dash",
+        "wom:biped/combat/torment_airslam"
       ]
     },
     {
@@ -86,13 +86,13 @@
       "speed": 1.9,
       "idle": "napoleon",
       "combos": [
-        "ef_cz:biped/sfa/shogun/shogun_auto1",
-        "ef_cz:biped/sfa/shogun/shogun_auto2",
+        "wom:biped/combat/torment_auto_1",
+        "wom:biped/combat/torment_auto_2",
         "wom:biped/skill/antitheus_ascended_auto_1",
         "epicsanji:biped/combat/sanji_auto_4",
         "wom:biped/skill/antitheus_ascended_auto_2",
         "wom:biped/skill/antitheus_ascended_auto_3",
-        "ef_cz:biped/sfa/shogun/shogun_dash2",
+        "wom:biped/combat/enderblaster_onehand_dash",
         "wom:biped/combat/agony_air_attack_1"
       ]
     },

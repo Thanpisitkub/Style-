@@ -36,23 +36,23 @@
   },
   "combos": {
     "one_hand": [
-      "ef_cz:biped/sfa/ironclad/ironclad_auto1",
-      "ef_cz:biped/sfa/ironclad/ironclad_auto2",
+      "wom:biped/combat/agony_auto_2",
+      "wom:biped/combat/agony_auto_3",
       "wom:biped/combat/enderblaster_twohand_auto_2",
       "wom:biped/combat/agony_clawstrike",
       "wom:biped/combat/enderblaster_twohand_auto_4",
       "epicsanji:biped/combat/sanji_auto_2",
-      "ef_cz:biped/sfa/ironclad/ironclad_dash",
+      "wom:biped/combat/enderblaster_twohand_dash",
       "wom:biped/combat/agony_airslash"
     ],
     "two_hand": [
-      "ef_cz:biped/sfa/ironclad/ironclad_auto1",
-      "ef_cz:biped/sfa/ironclad/ironclad_auto2",
+      "wom:biped/combat/agony_auto_2",
+      "wom:biped/combat/agony_auto_3",
       "wom:biped/combat/enderblaster_twohand_auto_2",
       "wom:biped/combat/agony_clawstrike",
       "wom:biped/combat/enderblaster_twohand_auto_4",
       "epicsanji:biped/combat/sanji_auto_2",
-      "ef_cz:biped/sfa/ironclad/ironclad_dash",
+      "wom:biped/combat/enderblaster_twohand_dash",
       "wom:biped/combat/agony_airslash"
     ],
     "mount": [

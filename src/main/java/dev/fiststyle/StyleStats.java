@@ -7,11 +7,11 @@ public final class StyleStats {
     public static final double[] SPEED = {2.5, 2.4, 2.25, 2.1, 2.0, 1.9, 1.8, 1.7, 1.6, 1.5};
     /** Animation id of the fourth punch (the uppercut) of each style. */
     public static final String[] UPPERCUT = {
-        "ef_cz:biped/mk/kabal/kabal_auto2",
+        "wom:biped/combat/torment_charged_attack_1",
         "wom:biped/combat/enderblaster_twohand_tishnaw",
         "wom:biped/skill/kick_1",
         "wom:biped/combat/agony_clawstrike",
-        "ef_cz:biped/sfa/ironclad/ironclad_fist_charge",
+        "wom:biped/skill/agony_rising_eagle",
         "epicsanji:biped/combat/sanji_auto_4",
         "wom:biped/skill/strong_punch",
         "wom:biped/combat/antitheus_guillotine",

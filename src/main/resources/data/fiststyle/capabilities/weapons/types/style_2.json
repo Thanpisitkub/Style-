@@ -36,24 +36,24 @@
   },
   "combos": {
     "one_hand": [
-      "ef_cz:biped/mk/kabal/kabal_auto1",
+      "wom:biped/combat/agony_auto_1",
       "wom:biped/combat/enderblaster_twohand_auto_1",
       "wom:biped/combat/enderblaster_twohand_auto_2",
       "wom:biped/combat/enderblaster_twohand_tishnaw",
       "wom:biped/combat/enderblaster_twohand_auto_3",
       "wom:biped/combat/enderblaster_twohand_auto_4",
       "wom:biped/combat/enderblaster_twohand_dash",
-      "ef_cz:biped/mk/kabal/kabal_airslash"
+      "wom:biped/combat/agony_air_attack_4"
     ],
     "two_hand": [
-      "ef_cz:biped/mk/kabal/kabal_auto1",
+      "wom:biped/combat/agony_auto_1",
       "wom:biped/combat/enderblaster_twohand_auto_1",
       "wom:biped/combat/enderblaster_twohand_auto_2",
       "wom:biped/combat/enderblaster_twohand_tishnaw",
       "wom:biped/combat/enderblaster_twohand_auto_3",
       "wom:biped/combat/enderblaster_twohand_auto_4",
       "wom:biped/combat/enderblaster_twohand_dash",
-      "ef_cz:biped/mk/kabal/kabal_airslash"
+      "wom:biped/combat/agony_air_attack_4"
     ],
     "mount": [
       "epicfight:biped/combat/sword_mount_attack"

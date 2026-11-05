@@ -13,7 +13,7 @@ import zipfile
 
 MOD_ID = "fiststyle"
 STYLE_COUNT = 10
-REQUIRED_DEPENDENCIES = ("epicfight", "wom", "ef_cz", "epicsanji")
+REQUIRED_DEPENDENCIES = ("epicfight", "wom", "epicsanji")
 REQUIRED_CLASSES = (
     "dev/fiststyle/FistStyleMod.class",
     "dev/fiststyle/StyleItem.class",

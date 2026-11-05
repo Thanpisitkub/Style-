@@ -39,13 +39,6 @@ ordering="AFTER"
 side="BOTH"
 
 [[dependencies.fiststyle]]
-modId="ef_cz"
-mandatory=true
-versionRange="[0,)"
-ordering="AFTER"
-side="BOTH"
-
-[[dependencies.fiststyle]]
 modId="epicsanji"
 mandatory=true
 versionRange="[0,)"
