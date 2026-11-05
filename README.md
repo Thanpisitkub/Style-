@@ -19,6 +19,8 @@
 | ef_cz | `ef_cz` | 0.3.9.10 |
 | EpicSanji | `epicsanji` | 20.1.6.1 |
 
+ม็อดตัวไหนก็ใช้รุ่นอื่นได้ (เกมตรวจแค่ว่ามีม็อดนั้นอยู่) แต่ชื่อท่าถูกตรวจกับรุ่นในตาราง ถ้าเกมของคุณใช้ EpicSanji รุ่น `20.14.16-compat-beta15-serverfix` แล้ว Style 3–8 ไม่ทำงาน แปลว่าชื่อท่าอาจต่างกัน ให้ส่ง log มาแก้
+
 ## โหลด .jar บนมือถือ
 
 1. เปิด https://github.com/Thanpisitkub/Style-/releases/tag/latest ในเบราว์เซอร์

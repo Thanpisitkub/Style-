@@ -56,6 +56,11 @@ def check_mods_toml(jar: zipfile.ZipFile) -> None:
     for dep_id in REQUIRED_DEPENDENCIES:
         if dep_id not in mandatory:
             raise VerifyError(f'{name} has no mandatory dependency modId="{dep_id}"')
+    # Forge treats a dependency with no versionRange as matching NO version, so the
+    # game refuses to load with "requires <mod>, currently <mod> is <version>".
+    for dep in dependencies:
+        if not str(dep.get("versionRange", "")).strip():
+            raise VerifyError(f'{name} dependency modId="{dep.get("modId")}" has no versionRange')
 
 
 def check_styles(jar: zipfile.ZipFile) -> None:
