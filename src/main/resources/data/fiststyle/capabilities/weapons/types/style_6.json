@@ -36,43 +36,36 @@
   },
   "combos": {
     "one_hand": [
-      "wom:biped/combat/torment_auto_1",
-      "wom:biped/combat/torment_auto_2",
-      "wom:biped/skill/antitheus_ascended_auto_1",
-      "epicsanji:biped/combat/sanji_auto_4",
-      "wom:biped/skill/antitheus_ascended_auto_2",
-      "wom:biped/skill/antitheus_ascended_auto_3",
-      "wom:biped/combat/enderblaster_onehand_dash",
-      "wom:biped/combat/agony_air_attack_1"
+      "wom:biped/combat/napoleon_auto_1",
+      "wom:biped/combat/napoleon_auto_2",
+      "wom:biped/combat/napoleon_auto_3",
+      "epicsanji:biped/combat/sanji_concasser",
+      "wom:biped/combat/napoleon_auto_4",
+      "epicsanji:biped/combat/sanji_auto_3",
+      "wom:biped/combat/enderblaster_twohand_dash",
+      "wom:biped/combat/agony_air_attack_3"
     ],
     "two_hand": [
-      "wom:biped/combat/torment_auto_1",
-      "wom:biped/combat/torment_auto_2",
-      "wom:biped/skill/antitheus_ascended_auto_1",
-      "epicsanji:biped/combat/sanji_auto_4",
-      "wom:biped/skill/antitheus_ascended_auto_2",
-      "wom:biped/skill/antitheus_ascended_auto_3",
-      "wom:biped/combat/enderblaster_onehand_dash",
-      "wom:biped/combat/agony_air_attack_1"
-    ],
-    "mount": [
-      "epicfight:biped/combat/sword_mount_attack"
+      "wom:biped/combat/napoleon_auto_1",
+      "wom:biped/combat/napoleon_auto_2",
+      "wom:biped/combat/napoleon_auto_3",
+      "epicsanji:biped/combat/sanji_concasser",
+      "wom:biped/combat/napoleon_auto_4",
+      "epicsanji:biped/combat/sanji_auto_3",
+      "wom:biped/combat/enderblaster_twohand_dash",
+      "wom:biped/combat/agony_air_attack_3"
     ]
-  },
-  "innate_skills": {
-    "one_hand": "epicfight:relentless_combo",
-    "two_hand": "epicfight:relentless_combo"
   },
   "livingmotion_modifier": {
     "one_hand": {
-      "block": "epicfight:biped/skill/guard_uchigatana",
+      "block": "wom:biped/skill/solar_guard",
       "idle": "wom:biped/living/napoleon_idle",
       "run": "wom:biped/living/napoleon_run",
       "walk": "wom:biped/living/napoleon_walk",
       "chase": "wom:biped/living/napoleon_run"
     },
     "two_hand": {
-      "block": "epicfight:biped/skill/guard_uchigatana",
+      "block": "wom:biped/skill/solar_guard",
       "idle": "wom:biped/living/napoleon_idle",
       "run": "wom:biped/living/napoleon_run",
       "walk": "wom:biped/living/napoleon_walk",

@@ -12,7 +12,7 @@ import tomllib
 import zipfile
 
 MOD_ID = "fiststyle"
-STYLE_COUNT = 10
+STYLE_COUNT = 12
 REQUIRED_DEPENDENCIES = ("epicfight", "wom", "epicsanji")
 REQUIRED_CLASSES = (
     "dev/fiststyle/FistStyleMod.class",

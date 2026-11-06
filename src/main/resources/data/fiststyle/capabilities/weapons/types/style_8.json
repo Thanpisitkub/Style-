@@ -36,47 +36,40 @@
   },
   "combos": {
     "one_hand": [
-      "wom:biped/skill/torment_berserk_auto_1",
-      "wom:biped/combat/agony_auto_3",
+      "wom:biped/combat/torment_auto_1",
+      "wom:biped/combat/torment_auto_2",
       "wom:biped/combat/torment_auto_3",
-      "wom:biped/combat/blackstar_basic_attack_4",
-      "wom:biped/combat/agony_auto_4",
-      "epicsanji:biped/combat/sanji_auto_4",
+      "wom:biped/combat/torment_charged_attack_2",
+      "wom:biped/combat/torment_auto_4",
+      "wom:biped/combat/blackstar_basic_attack_1",
       "wom:biped/combat/torment_dash",
-      "wom:biped/combat/agony_air_attack_3"
+      "wom:biped/combat/torment_airslam"
     ],
     "two_hand": [
-      "wom:biped/skill/torment_berserk_auto_1",
-      "wom:biped/combat/agony_auto_3",
+      "wom:biped/combat/torment_auto_1",
+      "wom:biped/combat/torment_auto_2",
       "wom:biped/combat/torment_auto_3",
-      "wom:biped/combat/blackstar_basic_attack_4",
-      "wom:biped/combat/agony_auto_4",
-      "epicsanji:biped/combat/sanji_auto_4",
+      "wom:biped/combat/torment_charged_attack_2",
+      "wom:biped/combat/torment_auto_4",
+      "wom:biped/combat/blackstar_basic_attack_1",
       "wom:biped/combat/torment_dash",
-      "wom:biped/combat/agony_air_attack_3"
-    ],
-    "mount": [
-      "epicfight:biped/combat/sword_mount_attack"
+      "wom:biped/combat/torment_airslam"
     ]
-  },
-  "innate_skills": {
-    "one_hand": "epicfight:relentless_combo",
-    "two_hand": "epicfight:relentless_combo"
   },
   "livingmotion_modifier": {
     "one_hand": {
-      "block": "epicfight:biped/skill/guard_uchigatana",
-      "idle": "wom:biped/living/antitheus_idle",
-      "run": "wom:biped/living/antitheus_run",
-      "walk": "wom:biped/living/antitheus_walk",
-      "chase": "wom:biped/living/antitheus_run"
+      "block": "wom:biped/skill/solar_guard",
+      "idle": "wom:biped/living/torment_idle",
+      "run": "wom:biped/living/torment_run",
+      "walk": "wom:biped/living/torment_walk",
+      "chase": "wom:biped/living/torment_run"
     },
     "two_hand": {
-      "block": "epicfight:biped/skill/guard_uchigatana",
-      "idle": "wom:biped/living/antitheus_idle",
-      "run": "wom:biped/living/antitheus_run",
-      "walk": "wom:biped/living/antitheus_walk",
-      "chase": "wom:biped/living/antitheus_run"
+      "block": "wom:biped/skill/solar_guard",
+      "idle": "wom:biped/living/torment_idle",
+      "run": "wom:biped/living/torment_run",
+      "walk": "wom:biped/living/torment_walk",
+      "chase": "wom:biped/living/torment_run"
     }
   }
 }

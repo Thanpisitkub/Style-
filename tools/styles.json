@@ -3,15 +3,15 @@
     {
       "n": 1,
       "damage": 4.0,
-      "speed": 2.5,
+      "speed": 2.1,
       "idle": "enderblaster_onehand",
       "combos": [
         "wom:biped/combat/enderblaster_onehand_auto_1",
-        "wom:biped/combat/torment_auto_1",
         "wom:biped/combat/enderblaster_onehand_auto_2",
-        "wom:biped/combat/torment_charged_attack_1",
         "wom:biped/combat/enderblaster_onehand_auto_3",
+        "wom:biped/skill/strong_punch",
         "wom:biped/combat/enderblaster_onehand_auto_4",
+        "wom:biped/skill/kick",
         "wom:biped/combat/enderblaster_onehand_dash",
         "wom:biped/combat/enderblaster_onehand_jumpkick"
       ]
@@ -19,33 +19,33 @@
     {
       "n": 2,
       "damage": 4.5,
-      "speed": 2.4,
+      "speed": 2.1,
       "idle": "enderblaster_twohand",
       "combos": [
-        "wom:biped/combat/agony_auto_1",
         "wom:biped/combat/enderblaster_twohand_auto_1",
         "wom:biped/combat/enderblaster_twohand_auto_2",
-        "wom:biped/combat/enderblaster_twohand_tishnaw",
         "wom:biped/combat/enderblaster_twohand_auto_3",
+        "wom:biped/skill/agony_rising_eagle",
         "wom:biped/combat/enderblaster_twohand_auto_4",
+        "wom:biped/skill/kick_2",
         "wom:biped/combat/enderblaster_twohand_dash",
-        "wom:biped/combat/agony_air_attack_4"
+        "wom:biped/combat/agony_air_attack_1"
       ]
     },
     {
       "n": 3,
       "damage": 5.0,
-      "speed": 2.25,
+      "speed": 2.1,
       "idle": "nova",
       "combos": [
-        "wom:biped/combat/enderblaster_twohand_auto_1",
-        "wom:biped/combat/torment_auto_2",
-        "wom:biped/combat/enderblaster_onehand_auto_3",
-        "wom:biped/skill/kick_1",
-        "wom:biped/combat/torment_auto_3",
+        "wom:biped/combat/nova_attack_1",
+        "wom:biped/combat/nova_attack_2",
+        "wom:biped/combat/nova_attack_3",
+        "epicsanji:biped/combat/sanji_antimaner",
+        "wom:biped/combat/nova_attack_4",
         "epicsanji:biped/combat/sanji_auto_1",
-        "wom:biped/combat/torment_dash",
-        "wom:biped/combat/enderblaster_onehand_jumpkick"
+        "wom:biped/combat/nova_attack_dash",
+        "wom:biped/combat/nova_attack_airslash"
       ]
     },
     {
@@ -54,92 +54,92 @@
       "speed": 2.1,
       "idle": "agony",
       "combos": [
+        "wom:biped/combat/agony_auto_1",
         "wom:biped/combat/agony_auto_2",
         "wom:biped/combat/agony_auto_3",
-        "wom:biped/combat/enderblaster_twohand_auto_2",
         "wom:biped/combat/agony_clawstrike",
-        "wom:biped/combat/enderblaster_twohand_auto_4",
+        "wom:biped/combat/agony_auto_4",
         "epicsanji:biped/combat/sanji_auto_2",
-        "wom:biped/combat/enderblaster_twohand_dash",
+        "wom:biped/combat/staff_dash",
         "wom:biped/combat/agony_airslash"
       ]
     },
     {
       "n": 5,
       "damage": 6.0,
-      "speed": 2.0,
+      "speed": 2.1,
       "idle": "moonless",
       "combos": [
-        "wom:biped/combat/torment_auto_3",
-        "wom:biped/combat/torment_auto_4",
-        "wom:biped/combat/agony_auto_4",
-        "wom:biped/combat/torment_charged_attack_3",
-        "wom:biped/combat/agony_auto_2",
-        "epicsanji:biped/combat/sanji_auto_3",
-        "wom:biped/skill/torment_berserk_dash",
-        "wom:biped/combat/torment_airslam"
+        "wom:biped/combat/moonless_auto_1",
+        "wom:biped/combat/moonless_auto_2",
+        "wom:biped/combat/moonless_auto_3",
+        "wom:biped/combat/moonless_crescent",
+        "wom:biped/combat/moonless_auto_1_verso",
+        "wom:biped/combat/moonless_auto_2_verso",
+        "wom:biped/combat/katana_sheathed_dash",
+        "wom:biped/combat/agony_air_attack_2"
       ]
     },
     {
       "n": 6,
       "damage": 6.25,
-      "speed": 1.9,
+      "speed": 2.1,
       "idle": "napoleon",
       "combos": [
-        "wom:biped/combat/torment_auto_1",
-        "wom:biped/combat/torment_auto_2",
-        "wom:biped/skill/antitheus_ascended_auto_1",
-        "epicsanji:biped/combat/sanji_auto_4",
-        "wom:biped/skill/antitheus_ascended_auto_2",
-        "wom:biped/skill/antitheus_ascended_auto_3",
-        "wom:biped/combat/enderblaster_onehand_dash",
-        "wom:biped/combat/agony_air_attack_1"
+        "wom:biped/combat/napoleon_auto_1",
+        "wom:biped/combat/napoleon_auto_2",
+        "wom:biped/combat/napoleon_auto_3",
+        "epicsanji:biped/combat/sanji_concasser",
+        "wom:biped/combat/napoleon_auto_4",
+        "epicsanji:biped/combat/sanji_auto_3",
+        "wom:biped/combat/enderblaster_twohand_dash",
+        "wom:biped/combat/agony_air_attack_3"
       ]
     },
     {
       "n": 7,
       "damage": 6.5,
-      "speed": 1.8,
-      "idle": "orbit",
+      "speed": 2.1,
+      "idle": "torment_berserk",
       "combos": [
-        "wom:biped/skill/antitheus_ascended_auto_1",
-        "epicsanji:biped/combat/sanji_auto_2",
-        "wom:biped/skill/antitheus_ascended_auto_2",
-        "wom:biped/skill/strong_punch",
-        "wom:biped/combat/torment_auto_3",
-        "wom:biped/skill/antitheus_ascended_auto_3",
+        "wom:biped/skill/torment_berserk_auto_1",
+        "wom:biped/skill/torment_berserk_auto_2",
+        "wom:biped/combat/torment_auto_1",
+        "wom:biped/combat/torment_charged_attack_1",
+        "wom:biped/combat/torment_auto_2",
+        "wom:biped/skill/kick_3",
         "wom:biped/skill/torment_berserk_dash",
-        "wom:biped/combat/agony_air_attack_2"
+        "wom:biped/skill/torment_berserk_airslam"
       ]
     },
     {
       "n": 8,
       "damage": 7.0,
-      "speed": 1.7,
-      "idle": "antitheus",
+      "speed": 2.1,
+      "idle": "torment",
       "combos": [
-        "wom:biped/skill/torment_berserk_auto_1",
-        "wom:biped/combat/agony_auto_3",
+        "wom:biped/combat/torment_auto_1",
+        "wom:biped/combat/torment_auto_2",
         "wom:biped/combat/torment_auto_3",
-        "wom:biped/combat/blackstar_basic_attack_4",
-        "wom:biped/combat/agony_auto_4",
-        "epicsanji:biped/combat/sanji_auto_4",
+        "wom:biped/combat/torment_charged_attack_2",
+        "wom:biped/combat/torment_auto_4",
+        "wom:biped/combat/blackstar_basic_attack_1",
         "wom:biped/combat/torment_dash",
-        "wom:biped/combat/agony_air_attack_3"
+        "wom:biped/combat/torment_airslam"
       ]
     },
     {
       "n": 9,
       "damage": 7.5,
-      "speed": 1.6,
-      "idle": "torment_berserk",
+      "speed": 2.1,
+      "idle": "blackstar",
       "combos": [
-        "wom:biped/combat/torment_auto_2",
-        "wom:biped/skill/torment_berserk_auto_1",
-        "wom:biped/combat/agony_auto_1",
+        "wom:biped/combat/blackstar_basic_attack_1",
+        "wom:biped/combat/blackstar_basic_attack_2",
         "wom:biped/combat/blackstar_basic_attack_3",
-        "wom:biped/skill/kick_2",
-        "wom:biped/skill/torment_berserk_auto_2",
+        "wom:biped/combat/torment_charged_attack_3",
+        "wom:biped/combat/blackstar_basic_attack_4",
+        "wom:biped/combat/torment_auto_3",
         "wom:biped/skill/torment_berserk_dash",
         "wom:biped/skill/torment_berserk_airslam"
       ]
@@ -147,17 +147,49 @@
     {
       "n": 10,
       "damage": 8.0,
-      "speed": 1.5,
-      "idle": "antitheus_ascended",
+      "speed": 2.1,
+      "idle": "ruine",
       "combos": [
-        "wom:biped/skill/torment_berserk_auto_2",
+        "wom:biped/combat/ruine_auto_1",
+        "wom:biped/combat/ruine_auto_2",
+        "wom:biped/combat/ruine_auto_3",
         "wom:biped/skill/kick_1",
+        "wom:biped/combat/ruine_auto_4",
         "wom:biped/combat/torment_auto_4",
-        "wom:biped/combat/torment_charged_attack_2",
-        "wom:biped/skill/kick_3",
-        "wom:biped/skill/antitheus_ascended_auto_3",
         "wom:biped/combat/torment_dash",
         "wom:biped/combat/torment_airslam"
+      ]
+    },
+    {
+      "n": 11,
+      "damage": 4.25,
+      "speed": 2.1,
+      "idle": "solar",
+      "combos": [
+        "wom:biped/combat/solar_auto_1",
+        "wom:biped/combat/solar_auto_2",
+        "wom:biped/combat/solar_auto_3",
+        "wom:biped/combat/enderblaster_twohand_tishnaw",
+        "wom:biped/combat/solar_auto_4",
+        "epicsanji:biped/combat/sanji_auto_2",
+        "wom:biped/combat/nova_attack_dash",
+        "wom:biped/combat/enderblaster_onehand_jumpkick"
+      ]
+    },
+    {
+      "n": 12,
+      "damage": 7.75,
+      "speed": 2.1,
+      "idle": "solar_obscuridad",
+      "combos": [
+        "wom:biped/combat/solar_obscuridad_auto_1",
+        "wom:biped/combat/solar_obscuridad_auto_2",
+        "wom:biped/combat/solar_obscuridad_auto_3",
+        "epicsanji:biped/combat/sanji_auto_4",
+        "wom:biped/combat/solar_obscuridad_auto_4",
+        "wom:biped/combat/blackstar_basic_attack_2",
+        "wom:biped/combat/torment_dash",
+        "wom:biped/skill/torment_berserk_airslam"
       ]
     }
   ]

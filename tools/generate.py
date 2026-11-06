@@ -17,9 +17,10 @@ from pathlib import Path
 from PIL import Image
 
 MOD_ID = "fiststyle"
-GUARD_ANIMATION = "epicfight:biped/skill/guard_uchigatana"
-MOUNT_ANIMATION = "epicfight:biped/combat/sword_mount_attack"
-INNATE_SKILL = "epicfight:relentless_combo"
+# Only WOM and EpicSanji animations are used (the user does not want Epic Fight's own).
+# The weapon types therefore define no "mount" combo (Epic Fight then lets the player
+# attack on a horse the vanilla way) and no innate skill (Relentless Combo is Epic Fight's).
+GUARD_ANIMATION = "wom:biped/skill/solar_guard"
 HELD_ITEM_DISPLAY_KEYS = (
     "thirdperson_righthand",
     "thirdperson_lefthand",
@@ -67,7 +68,7 @@ def _living_motion(style: dict, known: set) -> dict:
 def build_type(style: dict, known: set) -> dict:
     """Weapon type JSON, mirroring effs:hand_combat key for key."""
     n = style["n"]
-    required = list(style["combos"]) + [f"wom:biped/living/{style['idle']}_idle"]
+    required = list(style["combos"]) + [f"wom:biped/living/{style['idle']}_idle", GUARD_ANIMATION]
     unknown = [animation for animation in required if animation not in known]
     if unknown:
         raise ValueError(f"style {n}: animations not in known_animations.json: {unknown}")
@@ -99,9 +100,7 @@ def build_type(style: dict, known: set) -> dict:
         "combos": {
             "one_hand": list(style["combos"]),
             "two_hand": list(style["combos"]),
-            "mount": [MOUNT_ANIMATION],
         },
-        "innate_skills": {"one_hand": INNATE_SKILL, "two_hand": INNATE_SKILL},
         "livingmotion_modifier": {"one_hand": dict(living), "two_hand": dict(living)},
     }
 

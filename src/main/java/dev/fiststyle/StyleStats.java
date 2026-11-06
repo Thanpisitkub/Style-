@@ -3,20 +3,22 @@ package dev.fiststyle;
 
 /** Per-style stats; index = style number - 1. */
 public final class StyleStats {
-    public static final double[] DAMAGE = {4.0, 4.5, 5.0, 5.5, 6.0, 6.25, 6.5, 7.0, 7.5, 8.0};
-    public static final double[] SPEED = {2.5, 2.4, 2.25, 2.1, 2.0, 1.9, 1.8, 1.7, 1.6, 1.5};
+    public static final double[] DAMAGE = {4.0, 4.5, 5.0, 5.5, 6.0, 6.25, 6.5, 7.0, 7.5, 8.0, 4.25, 7.75};
+    public static final double[] SPEED = {2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1};
     /** Animation id of the fourth punch (the uppercut) of each style. */
     public static final String[] UPPERCUT = {
-        "wom:biped/combat/torment_charged_attack_1",
-        "wom:biped/combat/enderblaster_twohand_tishnaw",
-        "wom:biped/skill/kick_1",
-        "wom:biped/combat/agony_clawstrike",
-        "wom:biped/combat/torment_charged_attack_3",
-        "epicsanji:biped/combat/sanji_auto_4",
         "wom:biped/skill/strong_punch",
-        "wom:biped/combat/blackstar_basic_attack_4",
-        "wom:biped/combat/blackstar_basic_attack_3",
-        "wom:biped/combat/torment_charged_attack_2"
+        "wom:biped/skill/agony_rising_eagle",
+        "epicsanji:biped/combat/sanji_antimaner",
+        "wom:biped/combat/agony_clawstrike",
+        "wom:biped/combat/moonless_crescent",
+        "epicsanji:biped/combat/sanji_concasser",
+        "wom:biped/combat/torment_charged_attack_1",
+        "wom:biped/combat/torment_charged_attack_2",
+        "wom:biped/combat/torment_charged_attack_3",
+        "wom:biped/skill/kick_1",
+        "wom:biped/combat/enderblaster_twohand_tishnaw",
+        "epicsanji:biped/combat/sanji_auto_4"
     };
 
     private StyleStats() {

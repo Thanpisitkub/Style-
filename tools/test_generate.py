@@ -26,17 +26,15 @@ def snapshot(root: Path) -> dict:
 
 
 class GenerateTest(unittest.TestCase):
-    def test_stats_in_range_and_ordered(self):
-        self.assertEqual(len(STYLES), 10)
-        self.assertEqual([s["n"] for s in STYLES], list(range(1, 11)))
-        self.assertEqual((STYLES[0]["damage"], STYLES[0]["speed"]), (4.0, 2.5))
-        self.assertEqual((STYLES[9]["damage"], STYLES[9]["speed"]), (8.0, 1.5))
+    def test_stats_in_range(self):
+        self.assertEqual(len(STYLES), 12)
+        self.assertEqual([s["n"] for s in STYLES], list(range(1, 13)))
         for s in STYLES:
             self.assertTrue(4.0 <= s["damage"] <= 8.0, s["n"])
-            self.assertTrue(1.5 <= s["speed"] <= 2.5, s["n"])
-        for a, b in zip(STYLES, STYLES[1:]):
-            self.assertLessEqual(a["damage"], b["damage"])
-            self.assertGreaterEqual(a["speed"], b["speed"])
+            # every style swings at the same speed (the user asked for 2.10)
+            self.assertEqual(s["speed"], 2.1, s["n"])
+        self.assertEqual(STYLES[0]["damage"], 4.0)
+        self.assertEqual(STYLES[9]["damage"], 8.0)
 
     def test_combo_shape(self):
         for s in STYLES:
@@ -44,7 +42,7 @@ class GenerateTest(unittest.TestCase):
             self.assertEqual(combos["one_hand"], s["combos"])
             self.assertEqual(combos["two_hand"], s["combos"])
             self.assertEqual(len(combos["one_hand"]), 8)
-            self.assertEqual(combos["mount"], ["epicfight:biped/combat/sword_mount_attack"])
+            self.assertNotIn("mount", combos)
 
     def test_no_crashing_animations(self):
         # These WOM animations fire events that call Optional.get() on a skill the
@@ -58,13 +56,24 @@ class GenerateTest(unittest.TestCase):
             "wom:biped/combat/antitheus_agression",
             "wom:biped/combat/antitheus_guillotine",
             "wom:biped/skill/antitheus_ascended_blink",
-            "wom:biped/skill/agony_rising_eagle",
             "wom:biped/skill/ender_obscuris",
             "wom:biped/skill/time_travel",
+            "wom:biped/skill/katana_gesshoku",
         }
         for s in STYLES:
             for animation in s["combos"]:
                 self.assertNotIn(animation, unsafe, f"style {s['n']} uses a crashing animation")
+
+    def test_only_wom_and_epicsanji_animations_no_scythe(self):
+        for s in STYLES:
+            ids = list(s["combos"]) + [f"wom:biped/living/{s['idle']}_idle"]
+            built = generate.build_type(s, KNOWN)
+            ids += [v for m in built["livingmotion_modifier"].values() for v in m.values()]
+            for animation in ids:
+                self.assertRegex(animation, r"^(wom|epicsanji):", f"style {s['n']}: {animation}")
+                # Antitheus is WOM's scythe; the user does not want it
+                self.assertNotIn("antitheus", animation, f"style {s['n']}")
+            self.assertNotIn("innate_skills", built)
 
     def test_uppercuts_are_distinct(self):
         self.assertEqual(len({s["combos"][3] for s in STYLES}), len(STYLES))
@@ -84,7 +93,7 @@ class GenerateTest(unittest.TestCase):
             living = generate.build_type(s, KNOWN)["livingmotion_modifier"]
             self.assertEqual(living["one_hand"]["idle"], f"wom:biped/living/{s['idle']}_idle")
             self.assertEqual(living["two_hand"]["idle"], f"wom:biped/living/{s['idle']}_idle")
-            self.assertEqual(living["one_hand"]["block"], "epicfight:biped/skill/guard_uchigatana")
+            self.assertEqual(living["one_hand"]["block"], "wom:biped/skill/solar_guard")
         for hand in ("one_hand", "two_hand"):
             living = generate.build_type(STYLES[1], KNOWN)["livingmotion_modifier"][hand]
             self.assertNotIn("run", living)
@@ -129,7 +138,7 @@ class GenerateTest(unittest.TestCase):
 
     def test_lang(self):
         lang = generate.build_lang(STYLES)
-        self.assertEqual(lang["item.fiststyle.style_10"], "Style 10")
+        self.assertEqual(lang["item.fiststyle.style_12"], "Style 12")
         self.assertEqual(lang["itemGroup.fiststyle"], "Style")
 
     def test_stats_java(self):
@@ -148,8 +157,8 @@ class GenerateTest(unittest.TestCase):
             generate.write_all(Path(b), STYLES, KNOWN)
             first, second = snapshot(Path(a)), snapshot(Path(b))
             self.assertEqual(first, second)
-            # 10 x (capability, type, model) + lang + texture + java
-            self.assertEqual(len(first), 33)
+            # 12 x (capability, type, model) + lang + texture + java
+            self.assertEqual(len(first), 39)
 
 
 if __name__ == "__main__":

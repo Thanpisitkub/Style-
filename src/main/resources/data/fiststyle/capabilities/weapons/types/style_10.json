@@ -36,47 +36,40 @@
   },
   "combos": {
     "one_hand": [
-      "wom:biped/skill/torment_berserk_auto_2",
+      "wom:biped/combat/ruine_auto_1",
+      "wom:biped/combat/ruine_auto_2",
+      "wom:biped/combat/ruine_auto_3",
       "wom:biped/skill/kick_1",
+      "wom:biped/combat/ruine_auto_4",
       "wom:biped/combat/torment_auto_4",
-      "wom:biped/combat/torment_charged_attack_2",
-      "wom:biped/skill/kick_3",
-      "wom:biped/skill/antitheus_ascended_auto_3",
       "wom:biped/combat/torment_dash",
       "wom:biped/combat/torment_airslam"
     ],
     "two_hand": [
-      "wom:biped/skill/torment_berserk_auto_2",
+      "wom:biped/combat/ruine_auto_1",
+      "wom:biped/combat/ruine_auto_2",
+      "wom:biped/combat/ruine_auto_3",
       "wom:biped/skill/kick_1",
+      "wom:biped/combat/ruine_auto_4",
       "wom:biped/combat/torment_auto_4",
-      "wom:biped/combat/torment_charged_attack_2",
-      "wom:biped/skill/kick_3",
-      "wom:biped/skill/antitheus_ascended_auto_3",
       "wom:biped/combat/torment_dash",
       "wom:biped/combat/torment_airslam"
-    ],
-    "mount": [
-      "epicfight:biped/combat/sword_mount_attack"
     ]
-  },
-  "innate_skills": {
-    "one_hand": "epicfight:relentless_combo",
-    "two_hand": "epicfight:relentless_combo"
   },
   "livingmotion_modifier": {
     "one_hand": {
-      "block": "epicfight:biped/skill/guard_uchigatana",
-      "idle": "wom:biped/living/antitheus_ascended_idle",
-      "run": "wom:biped/living/antitheus_ascended_run",
-      "walk": "wom:biped/living/antitheus_ascended_walk",
-      "chase": "wom:biped/living/antitheus_ascended_run"
+      "block": "wom:biped/skill/solar_guard",
+      "idle": "wom:biped/living/ruine_idle",
+      "run": "wom:biped/living/ruine_run",
+      "walk": "wom:biped/living/ruine_walk",
+      "chase": "wom:biped/living/ruine_run"
     },
     "two_hand": {
-      "block": "epicfight:biped/skill/guard_uchigatana",
-      "idle": "wom:biped/living/antitheus_ascended_idle",
-      "run": "wom:biped/living/antitheus_ascended_run",
-      "walk": "wom:biped/living/antitheus_ascended_walk",
-      "chase": "wom:biped/living/antitheus_ascended_run"
+      "block": "wom:biped/skill/solar_guard",
+      "idle": "wom:biped/living/ruine_idle",
+      "run": "wom:biped/living/ruine_run",
+      "walk": "wom:biped/living/ruine_walk",
+      "chase": "wom:biped/living/ruine_run"
     }
   }
 }

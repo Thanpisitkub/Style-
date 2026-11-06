@@ -36,43 +36,36 @@
   },
   "combos": {
     "one_hand": [
+      "wom:biped/combat/agony_auto_1",
       "wom:biped/combat/agony_auto_2",
       "wom:biped/combat/agony_auto_3",
-      "wom:biped/combat/enderblaster_twohand_auto_2",
       "wom:biped/combat/agony_clawstrike",
-      "wom:biped/combat/enderblaster_twohand_auto_4",
+      "wom:biped/combat/agony_auto_4",
       "epicsanji:biped/combat/sanji_auto_2",
-      "wom:biped/combat/enderblaster_twohand_dash",
+      "wom:biped/combat/staff_dash",
       "wom:biped/combat/agony_airslash"
     ],
     "two_hand": [
+      "wom:biped/combat/agony_auto_1",
       "wom:biped/combat/agony_auto_2",
       "wom:biped/combat/agony_auto_3",
-      "wom:biped/combat/enderblaster_twohand_auto_2",
       "wom:biped/combat/agony_clawstrike",
-      "wom:biped/combat/enderblaster_twohand_auto_4",
+      "wom:biped/combat/agony_auto_4",
       "epicsanji:biped/combat/sanji_auto_2",
-      "wom:biped/combat/enderblaster_twohand_dash",
+      "wom:biped/combat/staff_dash",
       "wom:biped/combat/agony_airslash"
-    ],
-    "mount": [
-      "epicfight:biped/combat/sword_mount_attack"
     ]
-  },
-  "innate_skills": {
-    "one_hand": "epicfight:relentless_combo",
-    "two_hand": "epicfight:relentless_combo"
   },
   "livingmotion_modifier": {
     "one_hand": {
-      "block": "epicfight:biped/skill/guard_uchigatana",
+      "block": "wom:biped/skill/solar_guard",
       "idle": "wom:biped/living/agony_idle",
       "run": "wom:biped/living/agony_run",
       "walk": "wom:biped/living/agony_walk",
       "chase": "wom:biped/living/agony_run"
     },
     "two_hand": {
-      "block": "epicfight:biped/skill/guard_uchigatana",
+      "block": "wom:biped/skill/solar_guard",
       "idle": "wom:biped/living/agony_idle",
       "run": "wom:biped/living/agony_run",
       "walk": "wom:biped/living/agony_walk",
