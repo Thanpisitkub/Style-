@@ -3,7 +3,7 @@
     {
       "n": 1,
       "damage": 4.0,
-      "speed": 2.1,
+      "speed": 2.5,
       "idle": "enderblaster_onehand",
       "combos": [
         "wom:biped/combat/enderblaster_onehand_auto_1",
@@ -19,23 +19,23 @@
     {
       "n": 2,
       "damage": 4.5,
-      "speed": 2.1,
-      "idle": "enderblaster_twohand",
+      "speed": 2.42,
+      "idle": "katana",
       "combos": [
-        "wom:biped/combat/enderblaster_twohand_auto_1",
-        "wom:biped/combat/enderblaster_twohand_auto_2",
-        "wom:biped/combat/enderblaster_twohand_auto_3",
-        "wom:biped/skill/agony_rising_eagle",
-        "wom:biped/combat/enderblaster_twohand_auto_4",
+        "wom:biped/combat/katana_auto_1",
+        "wom:biped/combat/katana_auto_3",
+        "wom:biped/combat/orbit_attack_1",
+        "wom:biped/combat/katana_harusaki",
+        "wom:biped/combat/orbit_attack_2",
         "wom:biped/skill/kick_2",
-        "wom:biped/combat/enderblaster_twohand_dash",
+        "wom:biped/combat/staff_dash",
         "wom:biped/combat/agony_air_attack_1"
       ]
     },
     {
       "n": 3,
       "damage": 5.0,
-      "speed": 2.1,
+      "speed": 2.35,
       "idle": "nova",
       "combos": [
         "wom:biped/combat/nova_attack_1",
@@ -51,7 +51,7 @@
     {
       "n": 4,
       "damage": 5.5,
-      "speed": 2.1,
+      "speed": 2.27,
       "idle": "agony",
       "combos": [
         "wom:biped/combat/agony_auto_1",
@@ -67,7 +67,7 @@
     {
       "n": 5,
       "damage": 6.0,
-      "speed": 2.1,
+      "speed": 2.2,
       "idle": "moonless",
       "combos": [
         "wom:biped/combat/moonless_auto_1",
@@ -76,14 +76,14 @@
         "wom:biped/combat/moonless_crescent",
         "wom:biped/combat/moonless_auto_1_verso",
         "wom:biped/combat/moonless_auto_2_verso",
-        "wom:biped/combat/katana_sheathed_dash",
+        "wom:biped/combat/moonless_bypass",
         "wom:biped/combat/agony_air_attack_2"
       ]
     },
     {
       "n": 6,
       "damage": 6.25,
-      "speed": 2.1,
+      "speed": 2.16,
       "idle": "napoleon",
       "combos": [
         "wom:biped/combat/napoleon_auto_1",
@@ -99,7 +99,7 @@
     {
       "n": 7,
       "damage": 6.5,
-      "speed": 2.1,
+      "speed": 2.12,
       "idle": "torment_berserk",
       "combos": [
         "wom:biped/skill/torment_berserk_auto_1",
@@ -115,7 +115,7 @@
     {
       "n": 8,
       "damage": 7.0,
-      "speed": 2.1,
+      "speed": 2.05,
       "idle": "torment",
       "combos": [
         "wom:biped/combat/torment_auto_1",
@@ -131,7 +131,7 @@
     {
       "n": 9,
       "damage": 7.5,
-      "speed": 2.1,
+      "speed": 1.98,
       "idle": "blackstar",
       "combos": [
         "wom:biped/combat/blackstar_basic_attack_1",
@@ -147,7 +147,7 @@
     {
       "n": 10,
       "damage": 8.0,
-      "speed": 2.1,
+      "speed": 1.9,
       "idle": "ruine",
       "combos": [
         "wom:biped/combat/ruine_auto_1",
@@ -155,7 +155,7 @@
         "wom:biped/combat/ruine_auto_3",
         "wom:biped/skill/kick_1",
         "wom:biped/combat/ruine_auto_4",
-        "wom:biped/combat/torment_auto_4",
+        "wom:biped/combat/staff_auto_3",
         "wom:biped/combat/torment_dash",
         "wom:biped/combat/torment_airslam"
       ]
@@ -163,7 +163,7 @@
     {
       "n": 11,
       "damage": 4.25,
-      "speed": 2.1,
+      "speed": 2.46,
       "idle": "solar",
       "combos": [
         "wom:biped/combat/solar_auto_1",
@@ -179,7 +179,7 @@
     {
       "n": 12,
       "damage": 7.75,
-      "speed": 2.1,
+      "speed": 1.94,
       "idle": "solar_obscuridad",
       "combos": [
         "wom:biped/combat/solar_obscuridad_auto_1",

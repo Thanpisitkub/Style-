@@ -31,10 +31,25 @@ class GenerateTest(unittest.TestCase):
         self.assertEqual([s["n"] for s in STYLES], list(range(1, 13)))
         for s in STYLES:
             self.assertTrue(4.0 <= s["damage"] <= 8.0, s["n"])
-            # every style swings at the same speed (the user asked for 2.10)
-            self.assertEqual(s["speed"], 2.1, s["n"])
+            self.assertTrue(1.5 <= s["speed"] <= 2.5, s["n"])
         self.assertEqual(STYLES[0]["damage"], 4.0)
         self.assertEqual(STYLES[9]["damage"], 8.0)
+
+    def test_light_styles_are_faster_than_heavy_ones(self):
+        ordered = sorted(STYLES, key=lambda s: s["damage"])
+        speeds = [s["speed"] for s in ordered]
+        self.assertEqual(speeds, sorted(speeds, reverse=True))
+        self.assertGreater(ordered[0]["speed"], ordered[-1]["speed"])
+
+    def test_styles_differ_and_share_few_animations(self):
+        for a in STYLES:
+            for b in STYLES:
+                if a["n"] >= b["n"]:
+                    continue
+                self.assertNotEqual(a["combos"], b["combos"], (a["n"], b["n"]))
+                self.assertNotEqual(a["idle"], b["idle"], (a["n"], b["n"]))
+                shared = set(a["combos"]) & set(b["combos"])
+                self.assertLessEqual(len(shared), 2, (a["n"], b["n"], sorted(shared)))
 
     def test_combo_shape(self):
         for s in STYLES:
@@ -48,18 +63,7 @@ class GenerateTest(unittest.TestCase):
         # These WOM animations fire events that call Optional.get() on a skill the
         # player does not have (Demon Mark passive etc.), which crashes the server
         # tick when a plain player uses them (seen in a real game log, 2026-11-05).
-        unsafe = {
-            "wom:biped/combat/antitheus_auto_1",
-            "wom:biped/combat/antitheus_auto_2",
-            "wom:biped/combat/antitheus_auto_3",
-            "wom:biped/combat/antitheus_auto_4",
-            "wom:biped/combat/antitheus_agression",
-            "wom:biped/combat/antitheus_guillotine",
-            "wom:biped/skill/antitheus_ascended_blink",
-            "wom:biped/skill/ender_obscuris",
-            "wom:biped/skill/time_travel",
-            "wom:biped/skill/katana_gesshoku",
-        }
+        unsafe = set(json.load(open(Path(__file__).parent / "unsafe_animations.json"))["unsafe"])
         for s in STYLES:
             for animation in s["combos"]:
                 self.assertNotIn(animation, unsafe, f"style {s['n']} uses a crashing animation")
@@ -94,14 +98,17 @@ class GenerateTest(unittest.TestCase):
             self.assertEqual(living["one_hand"]["idle"], f"wom:biped/living/{s['idle']}_idle")
             self.assertEqual(living["two_hand"]["idle"], f"wom:biped/living/{s['idle']}_idle")
             self.assertEqual(living["one_hand"]["block"], "wom:biped/skill/solar_guard")
-        for hand in ("one_hand", "two_hand"):
-            living = generate.build_type(STYLES[1], KNOWN)["livingmotion_modifier"][hand]
-            self.assertNotIn("run", living)
-            self.assertNotIn("chase", living)
-            living = generate.build_type(STYLES[0], KNOWN)["livingmotion_modifier"][hand]
-            self.assertIn("run", living)
-            self.assertIn("chase", living)
-            self.assertEqual(living["chase"], living["run"])
+        # run/walk are only written when WOM really has that animation for the idle set
+        for s in STYLES:
+            for hand in ("one_hand", "two_hand"):
+                living = generate.build_type(s, KNOWN)["livingmotion_modifier"][hand]
+                for key in ("run", "walk"):
+                    has = f"wom:biped/living/{s['idle']}_{key}" in KNOWN
+                    self.assertEqual(key in living, has, (s["n"], key))
+                if "run" in living:
+                    self.assertEqual(living["chase"], living["run"])
+                else:
+                    self.assertNotIn("chase", living)
 
     def test_capability_type_matches_file(self):
         with tempfile.TemporaryDirectory() as tmp:

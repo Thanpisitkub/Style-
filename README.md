@@ -6,7 +6,9 @@
 - ถือแล้วไม่เห็นไอเท็มในมือ ใช้มือเปล่าต่อยตามสไตล์
 - ทุกสไตล์มีคอมโบ ต่อย 1–6, วิ่งแล้วต่อย 1 ท่า, กระโดดแล้วต่อย 1 ท่า (ต่อย 4 คือช่องของท่าซัดศัตรู ซึ่งซัดขึ้นด้วย hook ใน Java ดูหัวข้อ "ท่าที่ 4 ซัดศัตรูขึ้นฟ้า")
 - ท่ายืน เดิน วิ่ง ใช้อนิเมชั่นของ WOM
-- ทุกสไตล์ความเร็วโจมตีเท่ากันที่ 2.10 ต่างกันที่ดาเมจและชุดท่า
+- หมัดเบาตีเร็ว หมัดหนักตีช้าลงนิดหน่อย ความเร็วโจมตีไล่ตั้งแต่ 2.50 (Style 1 เบาสุด) ถึง 1.90 (Style 10 หนักสุด)
+- แต่ละสไตล์ใช้ท่าซ้ำกับสไตล์อื่นได้ไม่เกิน 2 ท่า และท่ายืนไม่ซ้ำกันเลย
+- ไม่ใช้ท่า WOM ที่ทำให้เซิร์ฟเวอร์ค้างเมื่อผู้เล่นไม่มีสกิลนั้น (รายการอยู่ใน `tools/unsafe_animations.json`)
 - ไม่ใช้ท่าของเคียว (Antitheus) จาก WOM และไม่ใช้ท่าของม็อด Epic Fight เอง มีแต่ท่าของ WOM กับ EpicSanji
 
 ## ม็อดที่ต้องมีในแพ็ก
@@ -66,18 +68,18 @@ hook นี้อ่านชื่ออนิเมชั่นจาก Epic 
 
 | สไตล์ | ดาเมจ | ความเร็ว | ท่ายืน (WOM) | ท่าต่อย 4 (ซัดขึ้น) |
 |---|---|---|---|---|
-| Style 1 | 4.00 | 2.10 | `enderblaster_onehand` | `skill/strong_punch` |
-| Style 2 | 4.50 | 2.10 | `enderblaster_twohand` | `skill/agony_rising_eagle` |
-| Style 3 | 5.00 | 2.10 | `nova` | `combat/sanji_antimaner` |
-| Style 4 | 5.50 | 2.10 | `agony` | `combat/agony_clawstrike` |
-| Style 5 | 6.00 | 2.10 | `moonless` | `combat/moonless_crescent` |
-| Style 6 | 6.25 | 2.10 | `napoleon` | `combat/sanji_concasser` |
-| Style 7 | 6.50 | 2.10 | `torment_berserk` | `combat/torment_charged_attack_1` |
-| Style 8 | 7.00 | 2.10 | `torment` | `combat/torment_charged_attack_2` |
-| Style 9 | 7.50 | 2.10 | `blackstar` | `combat/torment_charged_attack_3` |
-| Style 10 | 8.00 | 2.10 | `ruine` | `skill/kick_1` |
-| Style 11 | 4.25 | 2.10 | `solar` | `combat/enderblaster_twohand_tishnaw` |
-| Style 12 | 7.75 | 2.10 | `solar_obscuridad` | `combat/sanji_auto_4` |
+| Style 1 | 4.00 | 2.50 | `enderblaster_onehand` | `skill/strong_punch` |
+| Style 2 | 4.50 | 2.42 | `katana` | `combat/katana_harusaki` |
+| Style 3 | 5.00 | 2.35 | `nova` | `combat/sanji_antimaner` |
+| Style 4 | 5.50 | 2.27 | `agony` | `combat/agony_clawstrike` |
+| Style 5 | 6.00 | 2.20 | `moonless` | `combat/moonless_crescent` |
+| Style 6 | 6.25 | 2.16 | `napoleon` | `combat/sanji_concasser` |
+| Style 7 | 6.50 | 2.12 | `torment_berserk` | `combat/torment_charged_attack_1` |
+| Style 8 | 7.00 | 2.05 | `torment` | `combat/torment_charged_attack_2` |
+| Style 9 | 7.50 | 1.98 | `blackstar` | `combat/torment_charged_attack_3` |
+| Style 10 | 8.00 | 1.90 | `ruine` | `skill/kick_1` |
+| Style 11 | 4.25 | 2.46 | `solar` | `combat/enderblaster_twohand_tishnaw` |
+| Style 12 | 7.75 | 1.94 | `solar_obscuridad` | `combat/sanji_auto_4` |
 
 Style 3, 4, 6, 11, 12 มีท่าของ EpicSanji ปนอยู่
 

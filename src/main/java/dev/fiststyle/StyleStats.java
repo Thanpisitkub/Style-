@@ -4,11 +4,11 @@ package dev.fiststyle;
 /** Per-style stats; index = style number - 1. */
 public final class StyleStats {
     public static final double[] DAMAGE = {4.0, 4.5, 5.0, 5.5, 6.0, 6.25, 6.5, 7.0, 7.5, 8.0, 4.25, 7.75};
-    public static final double[] SPEED = {2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1};
+    public static final double[] SPEED = {2.5, 2.42, 2.35, 2.27, 2.2, 2.16, 2.12, 2.05, 1.98, 1.9, 2.46, 1.94};
     /** Animation id of the fourth punch (the uppercut) of each style. */
     public static final String[] UPPERCUT = {
         "wom:biped/skill/strong_punch",
-        "wom:biped/skill/agony_rising_eagle",
+        "wom:biped/combat/katana_harusaki",
         "epicsanji:biped/combat/sanji_antimaner",
         "wom:biped/combat/agony_clawstrike",
         "wom:biped/combat/moonless_crescent",
