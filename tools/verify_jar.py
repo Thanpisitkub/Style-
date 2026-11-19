@@ -19,6 +19,12 @@ REQUIRED_CLASSES = (
     "dev/fiststyle/StyleItem.class",
     "dev/fiststyle/StyleStats.class",
     "dev/fiststyle/LaunchHandler.class",
+    "dev/fiststyle/AutoCombat.class",
+    "dev/fiststyle/EfBridge.class",
+    "dev/fiststyle/StyleNet.class",
+    "dev/fiststyle/client/AutoScreen.class",
+    "dev/fiststyle/client/ClientForgeEvents.class",
+    "dev/fiststyle/client/ClientModEvents.class",
 )
 PNG_SIGNATURE = b"\x89PNG\r\n\x1a\n"
 
@@ -81,6 +87,8 @@ def check_lang(jar: zipfile.ZipFile) -> None:
     lang = check_json(jar, name)
     keys = [f"item.{MOD_ID}.style_{n}" for n in range(1, STYLE_COUNT + 1)]
     keys.append(f"itemGroup.{MOD_ID}")
+    keys += ["key.style.parry", "key.style.dodge", "key.style.menu", "key.categories.style", "gui.style.title",
+             "gui.style.parry", "gui.style.dodge", "gui.style.on", "gui.style.off", "gui.style.done"]
     for key in keys:
         if key not in lang:
             raise VerifyError(f"{name} is missing key {key}")

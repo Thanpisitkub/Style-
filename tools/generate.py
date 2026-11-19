@@ -6,6 +6,7 @@ Writes, relative to the repository root:
   src/main/resources/data/fiststyle/capabilities/weapons/types/style_N.json
   src/main/resources/assets/fiststyle/models/item/style_N.json
   src/main/resources/assets/fiststyle/lang/en_us.json
+  src/main/resources/assets/fiststyle/lang/th_th.json
   src/main/resources/assets/fiststyle/textures/item/style_s.png
   src/main/java/dev/fiststyle/StyleStats.java
 
@@ -123,9 +124,41 @@ def build_item_model() -> dict:
     }
 
 
+UI_LANG_EN = {
+    "key.categories.style": "Style",
+    "key.style.parry": "Toggle Auto Parry",
+    "key.style.dodge": "Toggle Auto Dodge",
+    "key.style.menu": "Open Auto Combat Menu",
+    "gui.style.title": "Auto Combat",
+    "gui.style.parry": "Auto Parry: %s",
+    "gui.style.dodge": "Auto Dodge: %s",
+    "gui.style.on": "ON",
+    "gui.style.off": "OFF",
+    "gui.style.done": "Done",
+}
+UI_LANG_TH = {
+    "key.style.parry": "สลับออโต้ปัด",
+    "key.style.dodge": "สลับออโต้หลบ",
+    "key.style.menu": "เปิดเมนูออโต้",
+    "gui.style.title": "ระบบต่อสู้อัตโนมัติ",
+    "gui.style.parry": "ออโต้ปัด: %s",
+    "gui.style.dodge": "ออโต้หลบ: %s",
+    "gui.style.on": "เปิด",
+    "gui.style.off": "ปิด",
+    "gui.style.done": "เสร็จ",
+}
+
+
 def build_lang(styles: list) -> dict:
     lang = {f"item.{MOD_ID}.style_{s['n']}": f"Style {s['n']}" for s in styles}
     lang[f"itemGroup.{MOD_ID}"] = "Style"
+    lang.update(UI_LANG_EN)
+    return lang
+
+
+def build_lang_th(styles: list) -> dict:
+    lang = build_lang(styles)
+    lang.update(UI_LANG_TH)
     return lang
 
 
@@ -184,6 +217,7 @@ def write_all(root: Path, styles: list, known: set) -> None:
         _write_json(weapons / "types" / f"style_{n}.json", build_type(style, known))
         _write_json(assets / "models/item" / f"style_{n}.json", model)
     _write_json(assets / "lang/en_us.json", build_lang(styles))
+    _write_json(assets / "lang/th_th.json", build_lang_th(styles))
     texture = assets / "textures/item/style_s.png"
     texture.parent.mkdir(parents=True, exist_ok=True)
     build_texture().save(texture, format="PNG")

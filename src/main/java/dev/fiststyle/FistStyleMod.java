@@ -2,6 +2,7 @@ package dev.fiststyle;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.mojang.logging.LogUtils;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -9,15 +10,20 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.slf4j.Logger;
 
-@Mod(FistStyleMod.MOD_ID)
+@Mod(FistFistStyleMod.MOD_ID)
 public class FistStyleMod {
     public static final String MOD_ID = "fiststyle";
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
     public static final DeferredRegister<CreativeModeTab> TABS =
@@ -41,7 +47,14 @@ public class FistStyleMod {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ITEMS.register(modEventBus);
         TABS.register(modEventBus);
+        modEventBus.addListener(this::commonSetup);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, StyleConfig.SPEC);
         MinecraftForge.EVENT_BUS.register(new LaunchHandler());
+        MinecraftForge.EVENT_BUS.register(new AutoCombat());
+    }
+
+    private void commonSetup(FMLCommonSetupEvent event) {
+        event.enqueueWork(StyleNet::register);
     }
 
     private static List<RegistryObject<Item>> registerStyleItems() {

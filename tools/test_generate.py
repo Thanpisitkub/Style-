@@ -140,6 +140,12 @@ class GenerateTest(unittest.TestCase):
         lang = generate.build_lang(STYLES)
         self.assertEqual(lang["item.fiststyle.style_12"], "Style 12")
         self.assertEqual(lang["itemGroup.fiststyle"], "Style")
+        for key in ("key.style.parry", "key.style.dodge", "key.style.menu", "gui.style.title",
+                    "gui.style.parry", "gui.style.dodge", "gui.style.on", "gui.style.off"):
+            self.assertIn(key, lang)
+        thai = generate.build_lang_th(STYLES)
+        self.assertEqual(set(thai), set(lang))
+        self.assertEqual(thai["gui.style.on"], "เปิด")
 
     def test_stats_java(self):
         java = generate.build_stats_java(STYLES)
@@ -157,8 +163,8 @@ class GenerateTest(unittest.TestCase):
             generate.write_all(Path(b), STYLES, KNOWN)
             first, second = snapshot(Path(a)), snapshot(Path(b))
             self.assertEqual(first, second)
-            # 12 x (capability, type, model) + lang + texture + java
-            self.assertEqual(len(first), 39)
+            # 12 x (capability, type, model) + 2 lang files + texture + java
+            self.assertEqual(len(first), 40)
 
 
 if __name__ == "__main__":

@@ -96,6 +96,23 @@ Style 3, 4, 6, 11, 12 มีท่าของ EpicSanji ปนอยู่
 
 ห้ามแก้ไฟล์ใน `src/main/resources/data` และ `StyleStats.java` ด้วยมือ ไฟล์เหล่านี้ถูกสร้างจาก `tools/styles.json` ทุกครั้ง
 
+## Auto Parry / Auto Dodge และหน้า UI
+
+ใช้ได้ตลอดเวลา ไม่จำเป็นต้องถือไอเท็ม Style ต้องติดตั้ง mod ทั้งฝั่งผู้เล่นและเซิร์ฟเวอร์
+
+| ปุ่ม (เปลี่ยนได้ที่ Options > Controls > Style) | ทำอะไร |
+|---|---|
+| `V` | เปิด/ปิด Auto Parry |
+| `B` | เปิด/ปิด Auto Dodge |
+| `G` | เปิดหน้า UI (ปุ่มกดสลับ เปิด/ปิด ของทั้งสองระบบ) |
+
+เมื่อเปิด ระบบจะยกเลิกการโจมตีที่เข้ามาจากเอนทิตีอื่นแล้วเล่นท่า parry หรือท่า dodge ของ WOM แทน
+โจมตีระยะประชิดจะปัดก่อน ลูกธนู/โพรเจกไทล์จะหลบก่อน ถ้าเปิดแค่อย่างเดียวจะใช้อย่างนั้น
+มีคูลดาวน์สั้น ๆ (ปัด 0.75 วินาที หลบ 1.25 วินาที) และค่าที่ตั้งไว้จะถูกจำข้ามการเข้าเกม
+
+ท่าที่ใช้: ปัด `wom:biped/skill/solar_guard_parry`, `herrscher_guard_parry` / หลบ `wom:biped/skill/dodgemaster_back`, `dodgemaster_left`, `dodgemaster_right`
+ถ้าเกมแจ้ง `[fiststyle] Could not link to Epic Fight` ใน log แปลว่า API ของ Epic Fight ไม่ตรงกับที่คาดไว้ ระบบ parry/dodge จะไม่ทำงานแต่สไตล์ยังใช้ได้ปกติ
+
 ## แก้ปัญหา
 
 ส่งบรรทัด log ที่เกี่ยวข้องมาให้ดู ไฟล์อยู่ที่ `logs/latest.log` หรือ `logs/debug.log` ในโฟลเดอร์ของแพ็ก ให้ส่งบรรทัดที่มีคำว่า `[Style]`, `fiststyle`, `epicfight`, `ERROR` หรือ `WARN` พร้อมบอกเลขสไตล์และเลขท่าที่ผิดปกติ

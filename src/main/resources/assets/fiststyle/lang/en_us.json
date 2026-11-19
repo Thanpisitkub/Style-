@@ -11,5 +11,15 @@
   "item.fiststyle.style_10": "Style 10",
   "item.fiststyle.style_11": "Style 11",
   "item.fiststyle.style_12": "Style 12",
-  "itemGroup.fiststyle": "Style"
+  "itemGroup.fiststyle": "Style",
+  "key.categories.style": "Style",
+  "key.style.parry": "Toggle Auto Parry",
+  "key.style.dodge": "Toggle Auto Dodge",
+  "key.style.menu": "Open Auto Combat Menu",
+  "gui.style.title": "Auto Combat",
+  "gui.style.parry": "Auto Parry: %s",
+  "gui.style.dodge": "Auto Dodge: %s",
+  "gui.style.on": "ON",
+  "gui.style.off": "OFF",
+  "gui.style.done": "Done"
 }
