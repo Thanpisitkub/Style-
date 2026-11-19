@@ -111,7 +111,7 @@ Style 3, 4, 6, 11, 12 มีท่าของ EpicSanji ปนอยู่
 มีคูลดาวน์สั้น ๆ (ปัด 0.75 วินาที หลบ 1.25 วินาที) และค่าที่ตั้งไว้จะถูกจำข้ามการเข้าเกม
 
 ท่าที่ใช้: ปัด `wom:biped/skill/solar_guard_parry`, `herrscher_guard_parry` / หลบ `wom:biped/skill/dodgemaster_back`, `dodgemaster_left`, `dodgemaster_right`
-ถ้าเกมแจ้ง `[fiststyle] Could not link to Epic Fight` ใน log แปลว่า API ของ Epic Fight ไม่ตรงกับที่คาดไว้ ระบบ parry/dodge จะไม่ทำงานแต่สไตล์ยังใช้ได้ปกติ
+ถ้าเกมแจ้ง `[Style] Could not link to Epic Fight` ใน log แปลว่า API ของ Epic Fight ไม่ตรงกับที่คาดไว้ ระบบ parry/dodge จะไม่ทำงานแต่สไตล์ยังใช้ได้ปกติ
 
 ## แก้ปัญหา
 

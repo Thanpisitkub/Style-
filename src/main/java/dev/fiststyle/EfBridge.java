@@ -41,7 +41,7 @@ public final class EfBridge {
 
             available = true;
         } catch (Throwable t) {
-            FistFistStyleMod.LOGGER.error("[style] Could not link to Epic Fight - auto parry/dodge disabled", t);
+            FistStyleMod.LOGGER.error("[Style] Could not link to Epic Fight - auto parry/dodge disabled", t);
         }
     }
 
@@ -63,7 +63,7 @@ public final class EfBridge {
             playSynchronized.invoke(patch, accessor, 0.0F);
             return true;
         } catch (Throwable t) {
-            FistFistStyleMod.LOGGER.warn("[style] Failed to play animation {}", animationKey, t);
+            FistStyleMod.LOGGER.warn("[Style] Failed to play animation {}", animationKey, t);
             return false;
         }
     }

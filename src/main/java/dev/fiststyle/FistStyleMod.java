@@ -20,7 +20,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
-@Mod(FistFistStyleMod.MOD_ID)
+@Mod(FistStyleMod.MOD_ID)
 public class FistStyleMod {
     public static final String MOD_ID = "fiststyle";
     public static final Logger LOGGER = LogUtils.getLogger();

@@ -14,7 +14,7 @@ public final class StyleNet {
 
     private static final String PROTOCOL = "1";
     public static final SimpleChannel CHANNEL = NetworkRegistry.newSimpleChannel(
-            new ResourceLocation(FistFistStyleMod.MOD_ID, "main"), () -> PROTOCOL, PROTOCOL::equals, PROTOCOL::equals);
+            new ResourceLocation(FistStyleMod.MOD_ID, "main"), () -> PROTOCOL, PROTOCOL::equals, PROTOCOL::equals);
 
     public static void register() {
         CHANNEL.registerMessage(0, AutoPacket.class, AutoPacket::encode, AutoPacket::decode, AutoPacket::handle);

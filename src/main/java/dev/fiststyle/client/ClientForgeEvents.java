@@ -10,7 +10,7 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = FistFistStyleMod.MOD_ID, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = FistStyleMod.MOD_ID, value = Dist.CLIENT)
 public final class ClientForgeEvents {
     private ClientForgeEvents() {}
 
