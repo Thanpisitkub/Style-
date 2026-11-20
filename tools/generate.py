@@ -83,7 +83,7 @@ def build_type(style: dict, known: set) -> dict:
         living = _living_motion(style, known)
     return {
         "category": "sword",
-        "hit_particle": "epicfight:hit_blunt",
+        "hit_particle": style.get("hit_particle", "epicfight:hit_blunt"),
         "hit_sound": "epicfight:entity.hit.blunt",
         "swing_sound": "epicfight:entity.weapon.whoosh_hard",
         "styles": {

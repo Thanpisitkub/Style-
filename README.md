@@ -5,6 +5,7 @@
 - เสกได้จากแท็บ Creative ชื่อ **Style** ไอคอนตัว S ขาวบนพื้นดำ ถือแล้วมองไม่เห็นไอเท็มในมือ
 - ดาเมจ 4.00 ความเร็วโจมตี 2.10 impact 1.1 ทะลุเกราะ 50
 - คอมโบ 7 ท่า: `solar_auto_1_polvora`, `sanji_auto_1`, `sanji_diable_auto_2`, `sanji_auto_3` (ท่าที่ 4 ปล่อยศัตรูลอย), `sanji_diable_auto_1`, ท่าวิ่ง `enderblaster_twohand_tishnaw`, ท่ากระโดด `sanji_antimaner`
+- อนุภาคตอนโดนตีเป็น `effs:kokusen_particle_2` (ต้องลงม็อด effs)
 - ท่ายืน/เดิน/วิ่งเป็นของ WOM solar
 - ใช้สกิลทั้งหมดของ Epic Fight ได้ ไม่ใช้ท่าอาวุธปกติของ Epic Fight
 - ไม่ใช้ท่าที่ทำให้เซิร์ฟเวอร์แครชเมื่อผู้เล่นไม่มีสกิลนั้น (`tools/unsafe_animations.json`)

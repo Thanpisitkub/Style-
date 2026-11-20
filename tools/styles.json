@@ -35,7 +35,8 @@
         "epicsanji:biped/skill/sanji_diable_auto_1",
         "wom:biped/combat/enderblaster_twohand_tishnaw",
         "epicsanji:biped/combat/sanji_antimaner"
-      ]
+      ],
+      "hit_particle": "effs:kokusen_particle_2"
     }
   ]
 }
