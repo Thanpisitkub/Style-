@@ -26,50 +26,48 @@
     "center": [
       0.0,
       0.0,
-      -0.75
+      0.0
     ],
     "size": [
       0.4,
       0.4,
-      0.8
+      0.4
     ]
   },
   "combos": {
     "one_hand": [
-      "wom:biped/combat/enderblaster_onehand_auto_1",
-      "wom:biped/combat/enderblaster_onehand_auto_2",
-      "wom:biped/combat/enderblaster_onehand_auto_3",
-      "wom:biped/skill/strong_punch",
-      "wom:biped/combat/enderblaster_onehand_auto_4",
-      "wom:biped/skill/kick",
-      "wom:biped/combat/enderblaster_onehand_dash",
-      "wom:biped/combat/enderblaster_onehand_jumpkick"
+      "wom:biped/skill/solar_auto_1_polvora",
+      "epicsanji:biped/combat/sanji_auto_1",
+      "epicsanji:biped/skill/sanji_diable_auto_2",
+      "epicsanji:biped/combat/sanji_auto_3",
+      "epicsanji:biped/skill/sanji_diable_auto_1",
+      "wom:biped/combat/enderblaster_twohand_tishnaw",
+      "epicsanji:biped/combat/sanji_antimaner"
     ],
     "two_hand": [
-      "wom:biped/combat/enderblaster_onehand_auto_1",
-      "wom:biped/combat/enderblaster_onehand_auto_2",
-      "wom:biped/combat/enderblaster_onehand_auto_3",
-      "wom:biped/skill/strong_punch",
-      "wom:biped/combat/enderblaster_onehand_auto_4",
-      "wom:biped/skill/kick",
-      "wom:biped/combat/enderblaster_onehand_dash",
-      "wom:biped/combat/enderblaster_onehand_jumpkick"
+      "wom:biped/skill/solar_auto_1_polvora",
+      "epicsanji:biped/combat/sanji_auto_1",
+      "epicsanji:biped/skill/sanji_diable_auto_2",
+      "epicsanji:biped/combat/sanji_auto_3",
+      "epicsanji:biped/skill/sanji_diable_auto_1",
+      "wom:biped/combat/enderblaster_twohand_tishnaw",
+      "epicsanji:biped/combat/sanji_antimaner"
     ]
   },
   "livingmotion_modifier": {
     "one_hand": {
       "block": "wom:biped/skill/solar_guard",
-      "idle": "wom:biped/living/enderblaster_onehand_idle",
-      "run": "wom:biped/living/enderblaster_onehand_run",
-      "walk": "wom:biped/living/enderblaster_onehand_walk",
-      "chase": "wom:biped/living/enderblaster_onehand_run"
+      "idle": "wom:biped/living/solar_idle",
+      "run": "wom:biped/living/solar_run",
+      "walk": "wom:biped/living/solar_walk",
+      "chase": "wom:biped/living/solar_run"
     },
     "two_hand": {
       "block": "wom:biped/skill/solar_guard",
-      "idle": "wom:biped/living/enderblaster_onehand_idle",
-      "run": "wom:biped/living/enderblaster_onehand_run",
-      "walk": "wom:biped/living/enderblaster_onehand_walk",
-      "chase": "wom:biped/living/enderblaster_onehand_run"
+      "idle": "wom:biped/living/solar_idle",
+      "run": "wom:biped/living/solar_run",
+      "walk": "wom:biped/living/solar_walk",
+      "chase": "wom:biped/living/solar_run"
     }
   }
 }

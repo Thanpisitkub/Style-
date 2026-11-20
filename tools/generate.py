@@ -118,7 +118,7 @@ def build_capability(style: dict) -> dict:
     return {
         "type": f"{MOD_ID}:style_{n}",
         "attributes": {
-            "common": {"armor_negation": 0.0, "impact": style.get("impact", _impact(n)), "max_strikes": 1}
+            "common": {"armor_negation": style.get("armor_negation", 0.0), "impact": style.get("impact", _impact(n)), "max_strikes": style.get("max_strikes", 1)}
         },
     }
 

@@ -1,132 +1,22 @@
-# Style — สไตล์หมัด Epic Fight 13 สไตล์
+# Style — สไตล์หมัด Epic Fight
 
-ม็อด Forge 1.20.1 ที่เพิ่มไอเท็ม **Style 1 ถึง Style 13** ให้ Epic Fight แต่ละชิ้นเป็นสไตล์หมัดของตัวเอง ใช้ท่าจาก Weapons of Miracles และ EpicSanji
+ม็อด Forge 1.20.1 ที่เพิ่มไอเท็ม **Style 1** (สไตล์เดียว) ให้ Epic Fight ใช้ท่าจาก Weapons of Miracles และ EpicSanji มีระบบ Auto Parry / Auto Dodge
 
-- เสกจากแท็บ Creative ชื่อ **Style** (ไอคอนตัว S ขาวบนพื้นดำ)
-- ถือแล้วไม่เห็นไอเท็มในมือ ใช้มือเปล่าต่อยตามสไตล์
-- ทุกสไตล์มีคอมโบ ต่อย 1–6, วิ่งแล้วต่อย 1 ท่า, กระโดดแล้วต่อย 1 ท่า (ต่อย 4 คือช่องของท่าซัดศัตรู ซึ่งซัดขึ้นด้วย hook ใน Java ดูหัวข้อ "ท่าที่ 4 ซัดศัตรูขึ้นฟ้า")
-- ท่ายืน เดิน วิ่ง ใช้อนิเมชั่นของ WOM
-- หมัดเบาตีเร็ว หมัดหนักตีช้าลงนิดหน่อย ความเร็วโจมตีไล่ตั้งแต่ 2.50 (Style 1 เบาสุด) ถึง 1.90 (Style 10 หนักสุด)
-- แต่ละสไตล์ใช้ท่าซ้ำกับสไตล์อื่นได้ไม่เกิน 2 ท่า และท่ายืนไม่ซ้ำกันเลย
-- ไม่ใช้ท่า WOM ที่ทำให้เซิร์ฟเวอร์ค้างเมื่อผู้เล่นไม่มีสกิลนั้น (รายการ 59 ท่าอยู่ใน `tools/unsafe_animations.json` และมีเทสต์กันไว้)
-- ไม่ใช้ท่าของเคียว (Antitheus) จาก WOM และไม่ใช้ท่าของม็อด Epic Fight เอง มีแต่ท่าของ WOM กับ EpicSanji
+- เสกได้จากแท็บ Creative ชื่อ **Style** ไอคอนตัว S ขาวบนพื้นดำ ถือแล้วมองไม่เห็นไอเท็มในมือ
+- ดาเมจ 4.00 ความเร็วโจมตี 2.10 impact 1.1 ทะลุเกราะ 50
+- คอมโบ 7 ท่า: `solar_auto_1_polvora`, `sanji_auto_1`, `sanji_diable_auto_2`, `sanji_auto_3` (ท่าที่ 4 ปล่อยศัตรูลอย), `sanji_diable_auto_1`, ท่าวิ่ง `enderblaster_twohand_tishnaw`, ท่ากระโดด `sanji_antimaner`
+- ท่ายืน/เดิน/วิ่งเป็นของ WOM solar
+- ใช้สกิลทั้งหมดของ Epic Fight ได้ ไม่ใช้ท่าอาวุธปกติของ Epic Fight
+- ไม่ใช้ท่าที่ทำให้เซิร์ฟเวอร์แครชเมื่อผู้เล่นไม่มีสกิลนั้น (`tools/unsafe_animations.json`)
 
-## ม็อดที่ต้องมีในแพ็ก
-
-ถ้าขาดตัวใดตัวหนึ่ง เกมจะแจ้งตอนเปิดและไม่เข้าเกม
-
-| ม็อด | mod id | รุ่นที่ใช้ตรวจชื่อท่า |
-|---|---|---|
-| Forge | `forge` | 1.20.1 (47 ขึ้นไป) |
-| Epic Fight | `epicfight` | 20.14.3 ขึ้นไป |
-| Weapons of Miracles | `wom` | 2.0.171 |
-| EpicSanji | `epicsanji` | 20.1.6.1 |
-
-ม็อดตัวไหนก็ใช้รุ่นอื่นได้ (เกมตรวจแค่ว่ามีม็อดนั้นอยู่) แต่ชื่อท่าถูกตรวจกับรุ่นในตาราง ถ้าเกมของคุณใช้ EpicSanji รุ่น `20.14.16-compat-beta15-serverfix` แล้ว Style 3, 4, 6, 11, 12 ไม่ทำงาน แปลว่าชื่อท่าอาจต่างกัน ให้ส่ง log มาแก้
-
-## โหลด .jar บนมือถือ
-
-1. เปิด https://github.com/Thanpisitkub/Style-/releases/tag/latest ในเบราว์เซอร์
-2. ที่หัวข้อ **Assets** กดไฟล์ `fiststyle-1.0.0.jar` เพื่อโหลด
-3. ย้ายไฟล์ไปไว้ในโฟลเดอร์ `mods` ของแพ็กที่ใช้ แล้วเปิดเกม
-
-Release ชื่อ `latest` ถูกสร้างใหม่ทุกครั้งที่มีการ push เข้า GitHub จึงเป็น build ล่าสุดเสมอ
-
-## รายการทดสอบในเกม
-
-ผู้พัฒนารันเกมไม่ได้ (ตัว .jar ถูกคอมไพล์และตรวจโครงสร้างโดย GitHub Actions แล้ว) ส่วนที่ทำงานในเกมจึงยังไม่เคยถูกทดสอบจริง ลองตามลำดับนี้
-
-1. ไอเท็มทั้ง 13 ชิ้นอยู่ในแท็บ Creative ชื่อ **Style** ไอคอนตัว S และเมื่อถือแล้วมองไม่เห็นไอเท็มในมือ
-2. tooltip ของไอเท็มแสดงดาเมจและความเร็วของ Style นั้นตามตารางด้านล่าง
-3. ถือแต่ละสไตล์แล้วลองต่อย เล่นท่าต่อย 1–6 ครบ รวมท่าวิ่งแล้วต่อย และท่ากระโดดแล้วต่อย
-4. ต่อย 4 ซัดเป้าหมายขึ้นฟ้า แล้วต่อย 5–6 ยังต่อติดขณะเป้าหมายลอยอยู่
-5. ถ้ามีอะไรผิดปกติ ส่งบรรทัด log ทุกบรรทัดที่มี `[Style]` (ใน `logs/latest.log`) พร้อมเลขสไตล์และเลขท่า ดูรายละเอียดในหัวข้อ "แก้ปัญหา" ควรต่อยคอมโบท่า 1 ถึง 4 ตามลำดับก่อนที่จะลองท่าอื่น เพราะ log บันทึกท่าที่ต่างกันได้ไม่เกิน 5 ท่าต่อรอบเกม ให้ลอง Style 3, 4, 6, 11, 12 ก่อน เพราะใช้ท่าของ EpicSanji และถ้าเป็นสไตล์เหล่านี้ ให้ส่งบรรทัด log ของ Epic Fight ที่บอกว่าหาอนิเมชั่นไม่เจอ (animation not found) หรือโหลดอนิเมชั่นไม่สำเร็จมาด้วย
-
-## ท่าที่ 4 ซัดศัตรูขึ้นฟ้า
-
-Epic Fight ไม่มีท่าซัดขึ้นให้เลือกใช้ ม็อดนี้จึงซัดขึ้นด้วย hook ใน Java (`LaunchHandler`): เมื่อผู้เล่นที่ถือไอเท็ม Style ต่อยโดนด้วยท่าต่อย 4 ของสไตล์นั้น เป้าหมายจะถูกซัดขึ้นเมื่อถึง tick ถัดไป (ความเร็วแนวดิ่ง 0.9) พร้อม slow falling 25 tick เพื่อให้ต่อย 5–6 ต่อติด ปรับค่าได้ที่ `LAUNCH_VELOCITY` และ `SLOW_FALL_TICKS` ใน `src/main/java/dev/fiststyle/LaunchHandler.java`
-
-hook นี้อ่านชื่ออนิเมชั่นจาก Epic Fight ด้วย reflection เพราะตอนคอมไพล์ไม่มี Epic Fight jar ถ้า API ของ Epic Fight รุ่นที่ใช้ไม่ตรงกับที่คาดไว้ hook จะปิดตัวเอง เกมไม่พังและท่าคอมโบยังเล่นตามปกติ แต่ต่อย 4 จะไม่ซัดขึ้น และ log จะมีบรรทัดแบบนี้หนึ่งครั้ง
-
-```
-[WARN] [Style] Launch hook disabled: could not read the Epic Fight animation from a damage source (the Epic Fight API probably differs from what this mod expects). Combo 4 will not launch targets; the combos themselves still work.
-```
-
-ตามด้วยข้อความ error ของ Java สองสามบรรทัด ถ้าเจอบรรทัดนี้ให้ส่งมาทั้งบรรทัดและบรรทัดถัดไป
-
-กรณีที่อ่านชื่อท่าได้แต่รูปแบบไม่ตรงกับที่คาดไว้ จะไม่มี error อะไรเลย ต่อย 4 แค่ไม่ซัดขึ้น ม็อดจึงบันทึกบรรทัด INFO ไว้ให้ตรวจสอบ เมื่อผู้เล่นที่ถือไอเท็ม Style ต่อยโดนด้วยท่าของ Epic Fight (บันทึกไม่เกิน 5 ท่าที่ต่างกันต่อรอบเกม)
-
-```
-[INFO] [Style] Epic Fight hit by Style 3: read animation id 'wom:biped/skill/kick_1', combo-4 id is 'wom:biped/skill/kick_1', match=true
-```
-
-`read animation id` คือชื่อท่าที่ hook อ่านได้ `combo-4 id` คือชื่อท่าที่คาดว่าเป็นต่อย 4 ของสไตล์นั้น ถ้าสองชื่อไม่ตรงกันจะขึ้น `match=false` และต่อย 4 ไม่ซัดขึ้น ถ้าอ่านชื่อท่าไม่ได้เลยจะขึ้นบรรทัด `no animation id could be read` แทน
-
-## ตารางสไตล์
-
-ดาเมจและความเร็วเป็นค่าของไอเท็มในมือหลัก ดาเมจต่อหมัดจริงจะคูณด้วยตัวคูณของแต่ละอนิเมชั่นอีกที
-
-| สไตล์ | ดาเมจ | ความเร็ว | ท่ายืน (WOM) | ท่าต่อย 4 (ซัดขึ้น) |
-|---|---|---|---|---|
-| Style 1 | 4.00 | 2.50 | `enderblaster_onehand` | `skill/strong_punch` |
-| Style 2 | 4.50 | 2.42 | `katana` | `combat/katana_harusaki` |
-| Style 3 | 5.00 | 2.35 | `nova` | `combat/sanji_antimaner` |
-| Style 4 | 5.50 | 2.27 | `agony` | `combat/agony_clawstrike` |
-| Style 5 | 6.00 | 2.20 | `moonless` | `combat/moonless_crescent` |
-| Style 6 | 6.25 | 2.16 | `napoleon` | `combat/sanji_concasser` |
-| Style 7 | 6.50 | 2.12 | `torment_berserk` | `combat/torment_charged_attack_1` |
-| Style 8 | 7.00 | 2.05 | `torment` | `combat/torment_charged_attack_2` |
-| Style 9 | 7.50 | 1.98 | `blackstar` | `combat/torment_charged_attack_3` |
-| Style 10 | 8.00 | 1.90 | `ruine` | `skill/kick_1` |
-| Style 11 | 4.25 | 2.46 | `solar` | `combat/enderblaster_twohand_tishnaw` |
-| Style 12 | 7.75 | 1.94 | `solar_obscuridad` | `combat/sanji_auto_4` |
-| Style 13 | 6.00 | 2.20 | `torment_berserk` (วิ่ง blackstar, เดิน nova) | `combat/sanji_auto_3` |
-
-Style 3, 4, 6, 11, 12, 13 มีท่าของ EpicSanji ปนอยู่
-
-Style 13 ทำจาก datapack ที่ผู้ใช้ส่งมา (`minecraft:1`): ชุดคอมโบ 7 ท่าตามต้นฉบับ (ท่าวิ่งคือท่าที่ 6 ท่ากระโดดคือท่าที่ 7) และ collider ขนาด 0.5 ส่วนดาเมจ 6.00 / ความเร็ว 2.20 ตั้งเอง
-
-## เปลี่ยนท่าคอมโบ
-
-ท่าทั้งหมดอยู่ในไฟล์เดียวคือ `tools/styles.json` แต่ละสไตล์มีรายการ `combos` 8 ท่า เรียงเป็น ต่อย 1, 2, 3, **4 (ซัดขึ้น)**, 5, 6, วิ่งแล้วต่อย, กระโดดแล้วต่อย สองท่าสุดท้ายต้องเป็นท่าวิ่งและท่ากระโดดเสมอ
-
-1. แก้ชื่อท่าในแถวที่ต้องการ เช่น `"wom:biped/combat/torment_auto_2"` ชื่อต้องอยู่ใน `tools/known_animations.json` ถ้าไม่อยู่ ตัวสร้างไฟล์จะแจ้ง error
-2. ติดตั้ง Pillow แล้วสร้างไฟล์ใหม่ (ต้องมี Python 3 บนคอมพิวเตอร์หรือ Termux)
-   ```
-   pip install pillow
-   python3 tools/generate.py
-   ```
-3. commit ทั้งไฟล์ที่แก้และไฟล์ที่ถูกสร้างใหม่ แล้ว push ถ้าลืมสร้างไฟล์ใหม่ GitHub Actions จะแจ้งว่าไฟล์ไม่ตรงกับตาราง
-4. รอ GitHub Actions build เสร็จ แล้วโหลด `.jar` ใหม่จากหน้า Releases
-
-ห้ามแก้ไฟล์ใน `src/main/resources/data` และ `StyleStats.java` ด้วยมือ ไฟล์เหล่านี้ถูกสร้างจาก `tools/styles.json` ทุกครั้ง
-
-## Auto Parry / Auto Dodge และหน้า UI
-
-ใช้ได้ตลอดเวลา ไม่จำเป็นต้องถือไอเท็ม Style ต้องติดตั้ง mod ทั้งฝั่งผู้เล่นและเซิร์ฟเวอร์
-
-| ปุ่ม (เปลี่ยนได้ที่ Options > Controls > Style) | ทำอะไร |
+## Auto Parry / Auto Dodge
+| ปุ่ม | ทำอะไร |
 |---|---|
 | `V` | เปิด/ปิด Auto Parry |
 | `B` | เปิด/ปิด Auto Dodge |
-| `G` | เปิดหน้า UI (ปุ่มกดสลับ เปิด/ปิด ของทั้งสองระบบ) |
+| `G` | เปิดหน้าตั้งค่า |
 
-เมื่อเปิด ระบบจะยกเลิกการโจมตีที่เข้ามาจากเอนทิตีอื่นแล้วเล่นท่า parry หรือท่า dodge ของ WOM แทน
-โจมตีระยะประชิดจะปัดก่อน ลูกธนู/โพรเจกไทล์จะหลบก่อน ถ้าเปิดแค่อย่างเดียวจะใช้อย่างนั้น
-มีคูลดาวน์สั้น ๆ (ปัด 0.75 วินาที หลบ 1.25 วินาที) และค่าที่ตั้งไว้จะถูกจำข้ามการเข้าเกม
+เปลี่ยนปุ่มได้ที่ Options → Controls → Style ติดตั้งทั้งฝั่ง client และ server
 
-ท่าที่ใช้: ปัด `wom:biped/skill/solar_guard_parry`, `herrscher_guard_parry` / หลบ `wom:biped/skill/dodgemaster_back`, `dodgemaster_left`, `dodgemaster_right`
-ถ้าเกมแจ้ง `[Style] Could not link to Epic Fight` ใน log แปลว่า API ของ Epic Fight ไม่ตรงกับที่คาดไว้ ระบบ parry/dodge จะไม่ทำงานแต่สไตล์ยังใช้ได้ปกติ
-
-## แก้ปัญหา
-
-ส่งบรรทัด log ที่เกี่ยวข้องมาให้ดู ไฟล์อยู่ที่ `logs/latest.log` หรือ `logs/debug.log` ในโฟลเดอร์ของแพ็ก ให้ส่งบรรทัดที่มีคำว่า `[Style]`, `fiststyle`, `epicfight`, `ERROR` หรือ `WARN` พร้อมบอกเลขสไตล์และเลขท่าที่ผิดปกติ
-
-| อาการ | สาเหตุที่น่าจะเป็น |
-|---|---|
-| เกมไม่เข้า ขึ้นว่าขาด mod | ขาด `epicfight`, `wom` หรือ `epicsanji` หรือรุ่น Epic Fight ต่ำกว่า 20.14.3 |
-| ไม่เจอไอเท็ม | เปิดแท็บ Creative ชื่อ Style หรือพิมพ์ `/give @s fiststyle:style_1` |
-| ถือไอเท็มแล้วท่าไม่เปลี่ยน | ไฟล์สไตล์โหลดไม่ผ่าน ดู log ตอนเข้าเกมว่ามี error เกี่ยวกับ `fiststyle` |
-| ต่อย 4 ไม่ซัดเป้าหมายขึ้น | ส่งทุกบรรทัดใน `logs/latest.log` ที่มี `[Style]` มาให้ดู โดยเฉพาะบรรทัด `[Style] Epic Fight hit by Style N: read animation id ...` ที่บันทึกตอนต่อยโดนครั้งแรก ๆ ถ้าเป็น `match=false` แปลว่าชื่อท่าที่อ่านได้ไม่ตรงกับชื่อท่าต่อย 4 ถ้ามี `[Style] Launch hook disabled` แปลว่า API ของ Epic Fight ไม่ตรงกับที่ hook คาดไว้ ถ้าไม่มีบรรทัด `[Style]` เลย ให้ตรวจว่าถือไอเท็ม Style ในมือหลักและอยู่ในโหมดต่อสู้ของ Epic Fight แล้วลองใหม่ |
-| Style 3, 4, 6, 11, 12 ถือแล้วไม่มีอะไรเกิดขึ้น หรือท่าเตะของ EpicSanji ไม่ทำงาน | ถ้า Epic Fight ไม่ลงทะเบียนอนิเมชั่นของ EpicSanji (EpicSanji สร้างมาสำหรับ API ของ Epic Fight รุ่นเก่ากว่าที่ WOM ใช้) สไตล์นั้นอาจไม่ทำงานเลยทั้งสไตล์ตอนถือ ไม่ใช่แค่ท่าเตะ ให้ส่งบรรทัด log ของ Epic Fight หรือของเกมที่บอกว่าหาอนิเมชั่นไม่เจอหรือโหลดไม่สำเร็จ พร้อมเลขสไตล์ วิธีแก้คือสลับท่าเหล่านั้นเป็นท่า WOM ซึ่งทำได้ทีละสไตล์ |
-| ท่าไหนดูแปลก | แจ้งเลขสไตล์กับเลขท่า แล้วแก้เป็นแถวเดียวใน `tools/styles.json` |
+## แก้ไขชุดท่า
+แก้ `tools/styles.json` แล้วรัน `python3 tools/generate.py` (ไฟล์ใน `src/main/resources` สร้างจากสคริปต์นี้)
