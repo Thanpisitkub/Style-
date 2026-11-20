@@ -42,7 +42,7 @@
       "wom:biped/combat/moonless_crescent",
       "wom:biped/combat/moonless_auto_1_verso",
       "wom:biped/combat/moonless_auto_2_verso",
-      "wom:biped/combat/moonless_bypass",
+      "wom:biped/combat/staff_dash",
       "wom:biped/combat/agony_air_attack_2"
     ],
     "two_hand": [
@@ -52,7 +52,7 @@
       "wom:biped/combat/moonless_crescent",
       "wom:biped/combat/moonless_auto_1_verso",
       "wom:biped/combat/moonless_auto_2_verso",
-      "wom:biped/combat/moonless_bypass",
+      "wom:biped/combat/staff_dash",
       "wom:biped/combat/agony_air_attack_2"
     ]
   },

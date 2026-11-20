@@ -36,21 +36,21 @@
   },
   "combos": {
     "one_hand": [
-      "wom:biped/combat/solar_auto_1",
-      "wom:biped/combat/solar_auto_2",
-      "wom:biped/combat/solar_auto_3",
+      "wom:biped/skill/solar_auto_1_polvora",
+      "wom:biped/skill/solar_auto_2_polvora",
+      "wom:biped/skill/solar_auto_3_polvora",
       "wom:biped/combat/enderblaster_twohand_tishnaw",
-      "wom:biped/combat/solar_auto_4",
+      "wom:biped/skill/solar_auto_4_polvora",
       "epicsanji:biped/combat/sanji_auto_2",
       "wom:biped/combat/nova_attack_dash",
       "wom:biped/combat/enderblaster_onehand_jumpkick"
     ],
     "two_hand": [
-      "wom:biped/combat/solar_auto_1",
-      "wom:biped/combat/solar_auto_2",
-      "wom:biped/combat/solar_auto_3",
+      "wom:biped/skill/solar_auto_1_polvora",
+      "wom:biped/skill/solar_auto_2_polvora",
+      "wom:biped/skill/solar_auto_3_polvora",
       "wom:biped/combat/enderblaster_twohand_tishnaw",
-      "wom:biped/combat/solar_auto_4",
+      "wom:biped/skill/solar_auto_4_polvora",
       "epicsanji:biped/combat/sanji_auto_2",
       "wom:biped/combat/nova_attack_dash",
       "wom:biped/combat/enderblaster_onehand_jumpkick"

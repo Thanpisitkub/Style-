@@ -38,7 +38,7 @@
     "one_hand": [
       "wom:biped/combat/solar_obscuridad_auto_1",
       "wom:biped/combat/solar_obscuridad_auto_2",
-      "wom:biped/combat/solar_obscuridad_auto_3",
+      "wom:biped/combat/solar_obscuridad_impacto",
       "epicsanji:biped/combat/sanji_auto_4",
       "wom:biped/combat/solar_obscuridad_auto_4",
       "wom:biped/combat/blackstar_basic_attack_2",
@@ -48,7 +48,7 @@
     "two_hand": [
       "wom:biped/combat/solar_obscuridad_auto_1",
       "wom:biped/combat/solar_obscuridad_auto_2",
-      "wom:biped/combat/solar_obscuridad_auto_3",
+      "wom:biped/combat/solar_obscuridad_impacto",
       "epicsanji:biped/combat/sanji_auto_4",
       "wom:biped/combat/solar_obscuridad_auto_4",
       "wom:biped/combat/blackstar_basic_attack_2",

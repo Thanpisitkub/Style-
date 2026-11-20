@@ -60,12 +60,20 @@ class GenerateTest(unittest.TestCase):
             self.assertNotIn("mount", combos)
 
     def test_no_crashing_animations(self):
-        # These WOM animations fire events that call Optional.get() on a skill the
-        # player does not have (Demon Mark passive etc.), which crashes the server
-        # tick when a plain player uses them (seen in a real game log, 2026-11-05).
-        unsafe = set(json.load(open(Path(__file__).parent / "unsafe_animations.json"))["unsafe"])
+        # These animations fire events that touch skill data of a passive the player
+        # does not have (Optional.get(), getSkill(...) == null, or a SkillDataKey that
+        # is "unregistered"), which crashes the server tick when a plain player uses
+        # them (seen in real game logs 2026-11-05 and 2026-11-20).
+        with open(Path(__file__).parent / "unsafe_animations.json", encoding="utf-8") as fh:
+            unsafe = set(json.load(fh)["unsafe"])
+        auto_java = (Path(__file__).parent.parent / "src/main/java/dev/fiststyle/AutoCombat.java").read_text(encoding="utf-8")
+        for animation in re.findall(r'"((?:wom|epicsanji):biped/[\w/]+)"', auto_java):
+            self.assertNotIn(animation, unsafe, f"auto parry/dodge uses a crashing animation: {animation}")
         for s in STYLES:
-            for animation in s["combos"]:
+            built = generate.build_type(s, KNOWN)
+            ids = list(s["combos"])
+            ids += [v for m in built["livingmotion_modifier"].values() for v in m.values()]
+            for animation in ids:
                 self.assertNotIn(animation, unsafe, f"style {s['n']} uses a crashing animation")
 
     def test_only_wom_and_epicsanji_animations_no_scythe(self):

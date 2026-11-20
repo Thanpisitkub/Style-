@@ -76,7 +76,7 @@
         "wom:biped/combat/moonless_crescent",
         "wom:biped/combat/moonless_auto_1_verso",
         "wom:biped/combat/moonless_auto_2_verso",
-        "wom:biped/combat/moonless_bypass",
+        "wom:biped/combat/staff_dash",
         "wom:biped/combat/agony_air_attack_2"
       ]
     },
@@ -166,11 +166,11 @@
       "speed": 2.46,
       "idle": "solar",
       "combos": [
-        "wom:biped/combat/solar_auto_1",
-        "wom:biped/combat/solar_auto_2",
-        "wom:biped/combat/solar_auto_3",
+        "wom:biped/skill/solar_auto_1_polvora",
+        "wom:biped/skill/solar_auto_2_polvora",
+        "wom:biped/skill/solar_auto_3_polvora",
         "wom:biped/combat/enderblaster_twohand_tishnaw",
-        "wom:biped/combat/solar_auto_4",
+        "wom:biped/skill/solar_auto_4_polvora",
         "epicsanji:biped/combat/sanji_auto_2",
         "wom:biped/combat/nova_attack_dash",
         "wom:biped/combat/enderblaster_onehand_jumpkick"
@@ -184,7 +184,7 @@
       "combos": [
         "wom:biped/combat/solar_obscuridad_auto_1",
         "wom:biped/combat/solar_obscuridad_auto_2",
-        "wom:biped/combat/solar_obscuridad_auto_3",
+        "wom:biped/combat/solar_obscuridad_impacto",
         "epicsanji:biped/combat/sanji_auto_4",
         "wom:biped/combat/solar_obscuridad_auto_4",
         "wom:biped/combat/blackstar_basic_attack_2",
