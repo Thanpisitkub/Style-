@@ -69,11 +69,18 @@ def _living_motion(style: dict, known: set) -> dict:
 def build_type(style: dict, known: set) -> dict:
     """Weapon type JSON, mirroring effs:hand_combat key for key."""
     n = style["n"]
-    required = list(style["combos"]) + [f"wom:biped/living/{style['idle']}_idle", GUARD_ANIMATION]
+    custom = style.get("custom", False)
+    idle_ids = list(style["living"].values()) if custom else [f"wom:biped/living/{style['idle']}_idle"]
+    required = list(style["combos"]) + idle_ids + [GUARD_ANIMATION]
     unknown = [animation for animation in required if animation not in known]
     if unknown:
         raise ValueError(f"style {n}: animations not in known_animations.json: {unknown}")
-    living = _living_motion(style, known)
+    if custom:
+        living = {"block": GUARD_ANIMATION, **style["living"]}
+        if "run" in living:
+            living["chase"] = living["run"]
+    else:
+        living = _living_motion(style, known)
     return {
         "category": "sword",
         "hit_particle": "epicfight:hit_blunt",
@@ -93,7 +100,7 @@ def build_type(style: dict, known: set) -> dict:
             "condition": "epicfight:offhand_category",
             "predicate": {"category": "greatsword"},
         },
-        "collider": {
+        "collider": style["collider"] if custom else {
             "number": 3,
             "center": [0.0, 0.0, -0.75],
             "size": [0.4, 0.4, 0.8],
@@ -111,7 +118,7 @@ def build_capability(style: dict) -> dict:
     return {
         "type": f"{MOD_ID}:style_{n}",
         "attributes": {
-            "common": {"armor_negation": 0.0, "impact": _impact(n), "max_strikes": 1}
+            "common": {"armor_negation": 0.0, "impact": style.get("impact", _impact(n)), "max_strikes": 1}
         },
     }
 

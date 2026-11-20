@@ -3,8 +3,8 @@ package dev.fiststyle;
 
 /** Per-style stats; index = style number - 1. */
 public final class StyleStats {
-    public static final double[] DAMAGE = {4.0, 4.5, 5.0, 5.5, 6.0, 6.25, 6.5, 7.0, 7.5, 8.0, 4.25, 7.75};
-    public static final double[] SPEED = {2.5, 2.42, 2.35, 2.27, 2.2, 2.16, 2.12, 2.05, 1.98, 1.9, 2.46, 1.94};
+    public static final double[] DAMAGE = {4.0, 4.5, 5.0, 5.5, 6.0, 6.25, 6.5, 7.0, 7.5, 8.0, 4.25, 7.75, 6.0};
+    public static final double[] SPEED = {2.5, 2.42, 2.35, 2.27, 2.2, 2.16, 2.12, 2.05, 1.98, 1.9, 2.46, 1.94, 2.2};
     /** Animation id of the fourth punch (the uppercut) of each style. */
     public static final String[] UPPERCUT = {
         "wom:biped/skill/strong_punch",
@@ -18,7 +18,8 @@ public final class StyleStats {
         "wom:biped/combat/torment_charged_attack_3",
         "wom:biped/skill/kick_1",
         "wom:biped/combat/enderblaster_twohand_tishnaw",
-        "epicsanji:biped/combat/sanji_auto_4"
+        "epicsanji:biped/combat/sanji_auto_4",
+        "epicsanji:biped/combat/sanji_auto_3"
     };
 
     private StyleStats() {

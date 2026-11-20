@@ -191,6 +191,41 @@
         "wom:biped/combat/torment_dash",
         "wom:biped/skill/torment_berserk_airslam"
       ]
+    },
+    {
+      "n": 13,
+      "damage": 6.0,
+      "speed": 2.2,
+      "idle": "torment_berserk",
+      "custom": true,
+      "living": {
+        "idle": "wom:biped/living/torment_berserk_idle",
+        "run": "wom:biped/living/blackstar_run",
+        "walk": "wom:biped/living/nova_walk"
+      },
+      "collider": {
+        "number": 1,
+        "center": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "impact": 1.2,
+      "combos": [
+        "wom:biped/combat/enderblaster_onehand_auto_3",
+        "wom:biped/combat/enderblaster_twohand_auto_1",
+        "epicsanji:biped/skill/sanji_diable_auto_2",
+        "epicsanji:biped/combat/sanji_auto_3",
+        "epicsanji:biped/combat/sanji_auto_4",
+        "epicsanji:biped/combat/sanji_antimaner",
+        "wom:biped/combat/enderblaster_twohand_tishnaw"
+      ]
     }
   ]
 }

@@ -27,8 +27,8 @@ def snapshot(root: Path) -> dict:
 
 class GenerateTest(unittest.TestCase):
     def test_stats_in_range(self):
-        self.assertEqual(len(STYLES), 12)
-        self.assertEqual([s["n"] for s in STYLES], list(range(1, 13)))
+        self.assertEqual(len(STYLES), 13)
+        self.assertEqual([s["n"] for s in STYLES], list(range(1, 14)))
         for s in STYLES:
             self.assertTrue(4.0 <= s["damage"] <= 8.0, s["n"])
             self.assertTrue(1.5 <= s["speed"] <= 2.5, s["n"])
@@ -47,7 +47,8 @@ class GenerateTest(unittest.TestCase):
                 if a["n"] >= b["n"]:
                     continue
                 self.assertNotEqual(a["combos"], b["combos"], (a["n"], b["n"]))
-                self.assertNotEqual(a["idle"], b["idle"], (a["n"], b["n"]))
+                if not (a.get("custom") or b.get("custom")):
+                    self.assertNotEqual(a["idle"], b["idle"], (a["n"], b["n"]))
                 shared = set(a["combos"]) & set(b["combos"])
                 self.assertLessEqual(len(shared), 2, (a["n"], b["n"], sorted(shared)))
 
@@ -56,7 +57,7 @@ class GenerateTest(unittest.TestCase):
             combos = generate.build_type(s, KNOWN)["combos"]
             self.assertEqual(combos["one_hand"], s["combos"])
             self.assertEqual(combos["two_hand"], s["combos"])
-            self.assertEqual(len(combos["one_hand"]), 8)
+            self.assertEqual(len(combos["one_hand"]), 7 if s.get("custom") else 8)
             self.assertNotIn("mount", combos)
 
     def test_no_crashing_animations(self):
@@ -102,12 +103,16 @@ class GenerateTest(unittest.TestCase):
 
     def test_living_motion(self):
         for s in STYLES:
+            if s.get("custom"):
+                continue
             living = generate.build_type(s, KNOWN)["livingmotion_modifier"]
             self.assertEqual(living["one_hand"]["idle"], f"wom:biped/living/{s['idle']}_idle")
             self.assertEqual(living["two_hand"]["idle"], f"wom:biped/living/{s['idle']}_idle")
             self.assertEqual(living["one_hand"]["block"], "wom:biped/skill/solar_guard")
         # run/walk are only written when WOM really has that animation for the idle set
         for s in STYLES:
+            if s.get("custom"):
+                continue
             for hand in ("one_hand", "two_hand"):
                 living = generate.build_type(s, KNOWN)["livingmotion_modifier"][hand]
                 for key in ("run", "walk"):
@@ -129,7 +134,7 @@ class GenerateTest(unittest.TestCase):
                 self.assertEqual(capability["type"], f"fiststyle:style_{n}")
                 self.assertEqual(
                     capability["attributes"]["common"],
-                    {"armor_negation": 0.0, "impact": round(0.5 + 0.15 * (n - 1), 2), "max_strikes": 1},
+                    {"armor_negation": 0.0, "impact": s.get("impact", round(0.5 + 0.15 * (n - 1), 2)), "max_strikes": 1},
                 )
                 self.assertTrue((weapons / "types" / f"style_{n}.json").is_file())
                 written = json.loads((weapons / f"style_{n}.json").read_text(encoding="utf-8"))
@@ -179,7 +184,7 @@ class GenerateTest(unittest.TestCase):
             first, second = snapshot(Path(a)), snapshot(Path(b))
             self.assertEqual(first, second)
             # 12 x (capability, type, model) + 2 lang files + texture + java
-            self.assertEqual(len(first), 40)
+            self.assertEqual(len(first), 43)
 
 
 if __name__ == "__main__":
